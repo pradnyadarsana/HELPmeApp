@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>335185507635-uteh1d2n0tslcufhrbp7kao61ppuduhr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.335185507635-uteh1d2n0tslcufhrbp7kao61ppuduhr</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>335185507635-je2qmub0m34q3pi309qfpean46tgfdto.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBDniJAqNETaOHGVmGarNHQT56knlu8vLA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>335185507635</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.smith.HelpMeApp</string>
+	<key>PROJECT_ID</key>
+	<string>helpme-apps</string>
+	<key>STORAGE_BUCKET</key>
+	<string>helpme-apps.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:335185507635:ios:35180a811e78328bf97a46</string>
+	<key>DATABASE_URL</key>
+	<string>https://helpme-apps.firebaseio.com</string>
+</dict>
+</plist>
