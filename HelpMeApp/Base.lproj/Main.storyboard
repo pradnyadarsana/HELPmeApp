@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zPQ-tj-wPE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zPQ-tj-wPE">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HelpMeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="9VR-KM-eux">
-                                <rect key="frame" x="40" y="271.66666666666669" width="334" height="230"/>
+                                <rect key="frame" x="40" y="240" width="334" height="196"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4CX-8b-DxQ">
                                         <rect key="frame" x="10" y="0.0" width="314" height="50"/>
@@ -27,7 +27,7 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="username"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kBw-Bq-pLE">
-                                        <rect key="frame" x="10" y="98" width="314" height="34"/>
+                                        <rect key="frame" x="10" y="98" width="314" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="hI8-cm-xN8"/>
                                         </constraints>
@@ -35,8 +35,8 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98C-Td-rwk">
-                                        <rect key="frame" x="10" y="180" width="314" height="50"/>
-                                        <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="10" y="196" width="314" height="0.0"/>
+                                        <color key="backgroundColor" systemColor="separatorColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="crx-oF-hmy"/>
                                         </constraints>
@@ -55,13 +55,13 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help Me" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyX-oW-hOC">
-                                <rect key="frame" x="157" y="126.00000000000001" width="101" height="33.666666666666671"/>
+                                <rect key="frame" x="157" y="126" width="101" height="2"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xar-5T-XDT">
-                                <rect key="frame" x="179" y="556" width="57" height="30"/>
+                                <rect key="frame" x="179" y="490.33333333333331" width="57" height="29.999999999999943"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="btnRegister:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ABM-zN-oTJ"/>
@@ -84,7 +84,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="F63-Ks-8Jm"/>
+                    <navigationItem key="navigationItem" title="Login" largeTitleDisplayMode="never" id="F63-Ks-8Jm"/>
                     <connections>
                         <segue destination="DP6-UN-GX7" kind="push" identifier="Register" id="Nwr-YF-iO8"/>
                     </connections>
@@ -93,7 +93,7 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
         </scene>
-        <!--Register-->
+        <!--Register Account-->
         <scene sceneID="3JE-6B-VJ8">
             <objects>
                 <viewController id="DP6-UN-GX7" customClass="Register" customModule="HelpMeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -101,12 +101,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyI-c6-pwr">
-                                <rect key="frame" x="142" y="68" width="131" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kly-sR-oa1">
                                 <rect key="frame" x="57" y="136" width="300" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -133,27 +127,20 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Da8-2J-SJv">
-                                <rect key="frame" x="47" y="381" width="320" height="0.0"/>
+                                <rect key="frame" x="47" y="381" width="320" height="216"/>
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="-3187256832">
-                                    <!--1900-01-01 10:52:48 +0000-->
+                                    <!--1900-01-01 10:52:48 AM +0000-->
                                 </date>
                                 <date key="maximumDate" timeIntervalSinceReferenceDate="-50400">
-                                    <!--2000-12-31 10:00:00 +0000-->
+                                    <!--2000-12-31 10:00:00 AM +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="id_ID"/>
                             </datePicker>
                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dXI-RZ-BUy">
-                                <rect key="frame" x="57" y="389" width="300" height="34"/>
+                                <rect key="frame" x="57" y="605" width="300" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="D3n-jU-wBu">
-                                <rect key="frame" x="4" y="445" width="414" height="175"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="DP6-UN-GX7" id="Mun-n1-zcd"/>
-                                    <outlet property="delegate" destination="DP6-UN-GX7" id="Rkb-im-Brq"/>
-                                </connections>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBF-B6-V6D">
                                 <rect key="frame" x="171" y="654" width="72" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -167,13 +154,10 @@
                             <constraint firstItem="OYW-Lt-DtB" firstAttribute="trailing" secondItem="SBF-B6-V6D" secondAttribute="trailing" constant="171" id="2QE-50-jlg"/>
                             <constraint firstItem="OYW-Lt-DtB" firstAttribute="trailing" secondItem="kly-sR-oa1" secondAttribute="trailing" constant="57" id="2XT-7Y-5cI"/>
                             <constraint firstItem="OYW-Lt-DtB" firstAttribute="trailing" secondItem="dXI-RZ-BUy" secondAttribute="trailing" constant="57" id="48H-m9-c6i"/>
-                            <constraint firstItem="iyI-c6-pwr" firstAttribute="leading" secondItem="OYW-Lt-DtB" secondAttribute="leading" constant="142" id="4Ty-kk-hMl"/>
+                            <constraint firstItem="kly-sR-oa1" firstAttribute="top" secondItem="OYW-Lt-DtB" secondAttribute="top" constant="92" id="7kt-3B-hxU"/>
                             <constraint firstItem="OYW-Lt-DtB" firstAttribute="trailing" secondItem="Bqk-32-KGA" secondAttribute="trailing" constant="57" id="7w7-Wd-Oqd"/>
-                            <constraint firstItem="SBF-B6-V6D" firstAttribute="top" secondItem="D3n-jU-wBu" secondAttribute="bottom" constant="34" id="Amj-NL-qR7"/>
                             <constraint firstItem="Bqk-32-KGA" firstAttribute="top" secondItem="s2g-AE-2Lw" secondAttribute="bottom" constant="12" id="Bh7-u4-8Bd"/>
                             <constraint firstItem="Psm-XX-ehw" firstAttribute="leading" secondItem="OYW-Lt-DtB" secondAttribute="leading" constant="57" id="D53-2d-MkG"/>
-                            <constraint firstItem="D3n-jU-wBu" firstAttribute="top" secondItem="dXI-RZ-BUy" secondAttribute="bottom" constant="22" id="G7T-WX-FyB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="D3n-jU-wBu" secondAttribute="trailing" constant="-24" id="GgH-NT-NU0"/>
                             <constraint firstItem="kly-sR-oa1" firstAttribute="leading" secondItem="OYW-Lt-DtB" secondAttribute="leading" constant="57" id="NVF-14-4xC"/>
                             <constraint firstItem="OYW-Lt-DtB" firstAttribute="trailing" secondItem="Crw-Vt-5wc" secondAttribute="trailing" constant="57" id="NZf-Jt-VRx"/>
                             <constraint firstItem="OYW-Lt-DtB" firstAttribute="bottom" secondItem="SBF-B6-V6D" secondAttribute="bottom" constant="46" id="Ojb-fe-0XA"/>
@@ -182,9 +166,7 @@
                             <constraint firstItem="Da8-2J-SJv" firstAttribute="leading" secondItem="OYW-Lt-DtB" secondAttribute="leading" constant="47" id="Rcn-bk-U2Q"/>
                             <constraint firstItem="SBF-B6-V6D" firstAttribute="leading" secondItem="OYW-Lt-DtB" secondAttribute="leading" constant="171" id="SHZ-jV-Uog"/>
                             <constraint firstItem="OYW-Lt-DtB" firstAttribute="trailing" secondItem="Da8-2J-SJv" secondAttribute="trailing" constant="47" id="UVs-vF-Fhd"/>
-                            <constraint firstItem="iyI-c6-pwr" firstAttribute="top" secondItem="OYW-Lt-DtB" secondAttribute="top" constant="24" id="VFs-sV-gDd"/>
                             <constraint firstItem="Crw-Vt-5wc" firstAttribute="top" secondItem="Psm-XX-ehw" secondAttribute="bottom" constant="15" id="Vyy-W1-lkY"/>
-                            <constraint firstItem="OYW-Lt-DtB" firstAttribute="trailing" secondItem="iyI-c6-pwr" secondAttribute="trailing" constant="141" id="WJN-oY-Nfb"/>
                             <constraint firstItem="s2g-AE-2Lw" firstAttribute="top" secondItem="Crw-Vt-5wc" secondAttribute="bottom" constant="19" id="ZOu-hJ-HDn"/>
                             <constraint firstItem="Da8-2J-SJv" firstAttribute="top" secondItem="Bqk-32-KGA" secondAttribute="bottom" constant="13" id="ZgC-Lb-Xwr"/>
                             <constraint firstItem="dXI-RZ-BUy" firstAttribute="top" secondItem="Da8-2J-SJv" secondAttribute="bottom" constant="8" id="bzM-gA-1hp"/>
@@ -193,15 +175,14 @@
                             <constraint firstItem="Psm-XX-ehw" firstAttribute="top" secondItem="kly-sR-oa1" secondAttribute="bottom" constant="16" id="mR7-Re-qtC"/>
                             <constraint firstItem="Crw-Vt-5wc" firstAttribute="leading" secondItem="OYW-Lt-DtB" secondAttribute="leading" constant="57" id="oon-zJ-cLW"/>
                             <constraint firstItem="s2g-AE-2Lw" firstAttribute="leading" secondItem="OYW-Lt-DtB" secondAttribute="leading" constant="57" id="wp6-b0-2XW"/>
-                            <constraint firstItem="kly-sR-oa1" firstAttribute="top" secondItem="iyI-c6-pwr" secondAttribute="bottom" constant="47" id="xLE-sx-YWz"/>
-                            <constraint firstItem="D3n-jU-wBu" firstAttribute="leading" secondItem="OYW-Lt-DtB" secondAttribute="leading" constant="4" id="xhM-gq-fVm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OYW-Lt-DtB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NAd-Nd-EtG"/>
+                    <navigationItem key="navigationItem" title="Register Account" id="NAd-Nd-EtG"/>
                     <connections>
                         <outlet property="birthdate" destination="Bqk-32-KGA" id="1zC-gc-TJc"/>
-                        <outlet property="dropDown" destination="D3n-jU-wBu" id="J02-PK-GUy"/>
+                        <outlet property="date" destination="Da8-2J-SJv" id="cvK-jE-fgr"/>
+                        <outlet property="datePicker" destination="Da8-2J-SJv" id="aq3-ll-M8Y"/>
                         <outlet property="email" destination="s2g-AE-2Lw" id="riP-zx-rmo"/>
                         <outlet property="fullname" destination="kly-sR-oa1" id="g3G-Ze-9yb"/>
                         <outlet property="gender" destination="dXI-RZ-BUy" id="g7F-Vn-d0Y"/>
