@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Register: UIViewController {
+class Register: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
     @IBOutlet weak var fullname: UITextField!
     @IBOutlet weak var username: UITextField!
@@ -19,6 +19,7 @@ class Register: UIViewController {
     var list = ["Male", "Female"]
     
     private var datePicker: UIDatePicker?
+    var picker  = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,22 @@ class Register: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(Register.viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)
         birthdate.inputView = datePicker
+        picker.delegate = self
+        picker.dataSource = self
+        gender.inputView = picker
         // Do any additional setup after loading the view.
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return list.count
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        gender.text = list[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return list[row]
     }
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
         view.endEditing(true)
