@@ -7,17 +7,86 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        guard let user = Auth.auth().currentUser else {
+            return self.signin(auth: Auth.auth())
+        }
     }
-
+    @IBAction func signInBtn(_ sender: Any) {
+        signin(auth: Auth.auth())
+    }
+    
     @IBAction func btnRegister(_ sender: Any) {
         performSegue(withIdentifier: "Register", sender: (Any).self)
     }
     
+    
+    func signin(auth: Auth) {
+        
+        auth.signIn(withEmail: email.text!, password: password.text!) { (result, error) in
+            guard error == nil else {
+                return self.handleError(error: error!)
+            }
+            
+            guard let user = result?.user else{
+                fatalError("Not user do not know what went wrong")
+            }
+            
+            user.reload { (error) in
+                switch user.isEmailVerified {
+                case true:
+                    print("users email is verified")
+                    self.performSegue(withIdentifier: "loginSegue", sender: (Any).self)
+                case false:
+                    
+                    user.sendEmailVerification { (error) in
+                        
+                        guard let error = error else {
+                            return print("user email verification sent")
+                        }
+                        
+                        self.handleError(error: error)
+                    }
+                    
+                    print("verify it now")
+                }
+            }
+            print("Signed in user: \(user.email)")
+            
+        }
+        
+    }
+    
+    func handleError(error: Error) {
+        
+        /// the user is not registered
+        /// user not found
+        
+        let errorAuthStatus = AuthErrorCode.init(rawValue: error._code)!
+        switch errorAuthStatus {
+        case .wrongPassword:
+            print("wrongPassword")
+        case .invalidEmail:
+            print("invalidEmail")
+        case .operationNotAllowed:
+            print("operationNotAllowed")
+        case .userDisabled:
+            print("userDisabled")
+        case .userNotFound:
+            print("userNotFound")
+        case .tooManyRequests:
+            print("tooManyRequests, oooops")
+        default: fatalError("error not supported here")
+        }
+        
+    }
 }
 

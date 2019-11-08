@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class Register: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
@@ -34,6 +35,7 @@ class Register: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
         picker.dataSource = self
         gender.inputView = picker
         // Do any additional setup after loading the view.
+
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -57,6 +59,78 @@ class Register: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
         view.endEditing(true)
         
     }
+    
+    @IBAction func registerBtn(_ sender: Any) {
+        register(auth: Auth.auth())
+    }
+    
+    
+    
+    func register(auth: Auth) {
+        auth.createUser(withEmail: email.text!, password: password.text!) { (result, error) in
+            guard error == nil else {
+                return self.handleError(error: error!)
+            }
+            guard let user = result?.user else {
+                fatalError("Do not know why this would happen")
+            }
+            print("registered user: \(user.email)")
+            user.reload { (error) in
+                switch user.isEmailVerified {
+                case true:
+                    print("users email is verified")
+                case false:
+                    
+                    user.sendEmailVerification { (error) in
+                        
+                        guard let error = error else {
+                            return print("user email verification sent")
+                        }
+                        
+                        self.handleError(error: error)
+                    }
+                    
+                    print("verify it now")
+                }
+            }
+        }
+        signOut()
+    }
+    
+    func signOut() {
+        do {
+          try Auth.auth().signOut()
+          self.dismiss(animated: true, completion: nil)
+        } catch (let error) {
+          print("Auth sign out failed: \(error)")
+        }
+    }
+    
+    func handleError(error: Error) {
+        
+        /// the user is not registered
+        /// user not found
+        
+        let errorAuthStatus = AuthErrorCode.init(rawValue: error._code)!
+        switch errorAuthStatus {
+        case .wrongPassword:
+            print("wrongPassword")
+        case .invalidEmail:
+            print("invalidEmail")
+        case .operationNotAllowed:
+            print("operationNotAllowed")
+        case .userDisabled:
+            print("userDisabled")
+        case .userNotFound:
+            print("userNotFound")
+            self.register(auth: Auth.auth())
+        case .tooManyRequests:
+            print("tooManyRequests, oooops")
+        default: fatalError("error not supported here")
+        }
+        
+    }
+    
 
 
 
