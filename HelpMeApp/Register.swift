@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Register: UIViewController {
+class Register: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
     @IBOutlet weak var fullname: UITextField!
     @IBOutlet weak var username: UITextField!
@@ -18,24 +18,46 @@ class Register: UIViewController {
     @IBOutlet weak var gender: UITextField!
     var list = ["Male", "Female"]
     
+    private var datePicker: UIDatePicker?
+    var picker  = UIPickerView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = UIDatePicker.Mode.date
-        gender.inputView = datePicker
-        
+
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .date
+        datePicker?.addTarget(self, action: #selector(Register.dateChanged(datePicker:)), for: .valueChanged)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(Register.viewTapped(gestureRecognizer:)))
+        view.addGestureRecognizer(tapGesture)
+        birthdate.inputView = datePicker
+        picker.delegate = self
+        picker.dataSource = self
+        gender.inputView = picker
         // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
-    */
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return list.count
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        gender.text = list[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return list[row]
+    }
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
+        view.endEditing(true)
+    }
+    @objc func dateChanged(datePicker: UIDatePicker){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        birthdate.text = dateFormatter.string(from: datePicker.date)
+        view.endEditing(true)
+        
+    }
+
+
 
 }
