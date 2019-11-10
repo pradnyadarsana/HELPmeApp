@@ -10,7 +10,6 @@
 		4A13AE932375A1C800DF58F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A13AE922375A1C800DF58F1 /* GoogleService-Info.plist */; };
 		4A13AE942375A1C800DF58F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A13AE922375A1C800DF58F1 /* GoogleService-Info.plist */; };
 		4A13AE952375A1C800DF58F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A13AE922375A1C800DF58F1 /* GoogleService-Info.plist */; };
-		4A13AED32375CE1800DF58F1 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A13AED22375CE1800DF58F1 /* FirebaseAuthManager.swift */; };
 		4A6F7627236D96B800040495 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6F7626236D96B800040495 /* Register.swift */; };
 		4AC4B7EF236C9BA700993A99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4B7EE236C9BA700993A99 /* AppDelegate.swift */; };
 		4AC4B7F1236C9BA700993A99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4B7F0236C9BA700993A99 /* SceneDelegate.swift */; };
@@ -49,7 +48,6 @@
 		3DCCA66310C1510459543CAB /* Pods_HelpMeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelpMeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4729D3F87E4557C4ECD33DF9 /* Pods-HelpMeApp-HelpMeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpMeApp-HelpMeAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-HelpMeApp-HelpMeAppUITests/Pods-HelpMeApp-HelpMeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4A13AE922375A1C800DF58F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		4A13AED22375CE1800DF58F1 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		4A6F7626236D96B800040495 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		4AC4B7EB236C9BA700993A99 /* HelpMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AC4B7EE236C9BA700993A99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 				4AC4B7EE236C9BA700993A99 /* AppDelegate.swift */,
 				4AC4B7F0236C9BA700993A99 /* SceneDelegate.swift */,
 				4AC4B7F2236C9BA700993A99 /* ViewController.swift */,
-				4A13AED22375CE1800DF58F1 /* FirebaseAuthManager.swift */,
 				4A6F7626236D96B800040495 /* Register.swift */,
 				4AC4B7F4236C9BA700993A99 /* Main.storyboard */,
 				EBE4DD212375C818002D8BA2 /* TabController.swift */,
@@ -424,7 +421,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A13AED32375CE1800DF58F1 /* FirebaseAuthManager.swift in Sources */,
 				EBE4DD222375C818002D8BA2 /* TabController.swift in Sources */,
 				4AC4B7F3236C9BA700993A99 /* ViewController.swift in Sources */,
 				4AC4B7EF236C9BA700993A99 /* AppDelegate.swift in Sources */,

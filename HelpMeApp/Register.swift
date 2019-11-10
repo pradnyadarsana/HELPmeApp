@@ -84,6 +84,9 @@ class Register: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
                     user.sendEmailVerification { (error) in
                         
                         guard let error = error else {
+                            
+                            
+                            self.signOut()
                             return print("user email verification sent")
                         }
                         
@@ -91,16 +94,24 @@ class Register: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
                     }
                     
                     print("verify it now")
+                    let message = "Email verification sent, verify your account now!"
+                    let alert = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
+
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+                    self.present(alert, animated: true)
                 }
             }
         }
-        signOut()
+        
     }
     
     func signOut() {
         do {
           try Auth.auth().signOut()
           self.dismiss(animated: true, completion: nil)
+            clearField()
+            print("Auth sign out success")
         } catch (let error) {
           print("Auth sign out failed: \(error)")
         }
@@ -110,28 +121,57 @@ class Register: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
         
         /// the user is not registered
         /// user not found
+        var message = ""
         
         let errorAuthStatus = AuthErrorCode.init(rawValue: error._code)!
         switch errorAuthStatus {
         case .wrongPassword:
             print("wrongPassword")
+            message = "Wrong Password"
         case .invalidEmail:
             print("invalidEmail")
+            message = "Invalid Email"
         case .operationNotAllowed:
             print("operationNotAllowed")
+            message = "Operation Not Allowed"
         case .userDisabled:
             print("userDisabled")
+            message = "User Disabled"
         case .userNotFound:
             print("userNotFound")
+            message = "User Not Found"
             self.register(auth: Auth.auth())
         case .tooManyRequests:
             print("tooManyRequests, oooops")
+            message = "Sorry, Too Many Requests, try again"
+        case .emailAlreadyInUse:
+            print("Email already used")
+            message = "Email already used"
+        case .weakPassword:
+            print("Your password is to weak")
+            message = "Your password is to weak"
+        case .missingEmail:
+            print("Input email required")
+            message = "Input email required"
         default: fatalError("error not supported here")
         }
         
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+        self.present(alert, animated: true)
+        
     }
     
-
-
+    
+    func clearField(){
+        self.fullname.text = ""
+        self.username.text = ""
+        self.password.text = ""
+        self.email.text = ""
+        self.birthdate.text = ""
+        self.gender.text = ""
+    }
 
 }

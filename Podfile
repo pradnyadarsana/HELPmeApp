@@ -6,6 +6,7 @@ target 'HelpMeApp' do
   use_frameworks!
 
   # Pods for HelpMeApp
+	pod 'Material', '~> 3.1.0'
 	pod 'Alamofire', '~> 5.0.0-rc.3'
 	pod 'Firebase/Auth'
 	pod 'Firebase/Storage'
