@@ -12,6 +12,7 @@ import FirebaseAuth
 class Register: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
     @IBOutlet weak var fullname: UITextField!
+    @IBOutlet var phonenumber: UITextField!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -34,7 +35,6 @@ class Register: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
         picker.delegate = self
         picker.dataSource = self
         gender.inputView = picker
-        // Do any additional setup after loading the view.
 
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

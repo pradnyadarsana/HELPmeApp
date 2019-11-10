@@ -76,12 +76,18 @@ class ViewController: UIViewController {
             print("wrongPassword")
         case .invalidEmail:
             print("invalidEmail")
+            let alert = UIAlertController(title: "Invalid Email", message: "Please enter correct Email Address", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         case .operationNotAllowed:
             print("operationNotAllowed")
         case .userDisabled:
             print("userDisabled")
         case .userNotFound:
             print("userNotFound")
+            let alert = UIAlertController(title: "User Not Found", message: "Please Enter Valid User", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         case .tooManyRequests:
             print("tooManyRequests, oooops")
         default: fatalError("error not supported here")
