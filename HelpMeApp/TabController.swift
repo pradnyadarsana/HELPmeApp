@@ -16,7 +16,17 @@ class TabController: UITabBarController {
         // Do any additional setup after loading the view.
     }
     
-
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+            let alert = UIAlertController(title: "Create", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+            alert.addAction(UIAlertAction(title: "Back", style: UIAlertAction.Style.cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Report", style: UIAlertAction.Style.default, handler: { (action) in
+                    print("Report Selected")
+            }))
+            alert.addAction(UIAlertAction(title: "Tips", style: UIAlertAction.Style.default, handler: { (action) in
+                    print("Tips Selected")
+            }))
+            self.present(alert, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
