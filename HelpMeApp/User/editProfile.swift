@@ -17,6 +17,7 @@ class editProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBOutlet var gender: UITextField!
     @IBOutlet var birthdate: UITextField!
     var list = ["Male", "Female"]
+    
 
     private var datePicker: UIDatePicker?
     var picker  = UIPickerView()
@@ -58,5 +59,7 @@ class editProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         birthdate.text = dateFormatter.string(from: datePicker.date)
         view.endEditing(true)
     }
+    
+    
 
 }

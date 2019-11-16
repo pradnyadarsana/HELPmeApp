@@ -18,43 +18,38 @@ class Profile: UIViewController {
     @IBOutlet weak var birthday: UILabel!
     @IBOutlet weak var gender: UILabel!
     
-    typealias APIResponse = ([[String: Any]])->Void
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getProfileByEmail(<#Profile.APIResponse#>)
+        let profileManager = ProfileInterface()
+        profileManager.getProfileByEmail(){ (json) in
+            
+            //print(json)
+            for usr in json {
+                //print("INI USR : \(usr)")
+                for i in usr{
+                    if(i.key == "data"){
+//                        print("INI I : \(i)")
+//                        print("INI I.VALUE : \(i.value)")
+                        let profile = i.value as! [String : Any]
+                        //print(self.profile)
+                        self.fullname.text! = profile["name"] as! String
+                        self.username.text! = profile["username"] as! String
+                        self.email.text! = profile["email"] as! String
+                        self.phone.text! = profile["phone"] as! String
+                        self.gender.text! = profile["gender"] as! String
+                        self.birthday.text! = profile["birth"] as! String
+                    }
+                }
+            }
+            
+        }
+        
         
         // Do any additional setup after loading the view.
     }
 
-    func getProfileByEmail(_ completion: @escaping APIResponse){
     
-        let email:String = (Auth.auth().currentUser?.email)!
-        print(email)
-        let profileJSON = ["email": email]
-        let URL:String = "https://helpme.xbanana.id/api/profile/getbyemail";
-        
-        // 2 - create request
-        Alamofire.request(URL,
-                          method: .post,
-                          parameters: profileJSON)
-            .validate()
-            .responseJSON { response in
-                // 3 - HTTP response handle
-                guard response.result.isSuccess else {
-                    print("Error while fetching remote rooms: \(String(describing: response.result.error))")
-                    return
-                }
-                print("########   POST RESPONSE   ########")
-                print(response)
-//                let jsonResponse = response.result.value! as! [[String: Any]]
-//                let m:UserProfile = UserProfile(json: jsonResponse)
-//                    self.userdata = m
-                print(response.value! as! [[String: Any]])
-                //completion(response.result.value as! [[String : Any]])
-                
-            
-        }
-    }
 
 }
