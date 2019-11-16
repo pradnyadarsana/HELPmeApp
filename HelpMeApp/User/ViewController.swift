@@ -15,9 +15,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        guard let user = Auth.auth().currentUser else {
-            return self.signin(auth: Auth.auth())
+
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {// Autologin masuk ke Home
+        super.viewDidAppear(true)
+        if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "loginSegue", sender: (Any).self)
         }
     }
     @IBAction func signInBtn(_ sender: Any) {
