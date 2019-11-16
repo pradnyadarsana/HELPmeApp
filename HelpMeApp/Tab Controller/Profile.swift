@@ -18,18 +18,16 @@ class Profile: UIViewController {
     @IBOutlet weak var birthday: UILabel!
     @IBOutlet weak var gender: UILabel!
     
-    //var userdata:UserProfile
-    
-    //typealias APIResponse = ([[String: Any]])
+    typealias APIResponse = ([[String: Any]])->Void
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getProfileByEmail()
+        getProfileByEmail(<#Profile.APIResponse#>)
         
         // Do any additional setup after loading the view.
     }
 
-    func getProfileByEmail(){
+    func getProfileByEmail(_ completion: @escaping APIResponse){
     
         let email:String = (Auth.auth().currentUser?.email)!
         print(email)
