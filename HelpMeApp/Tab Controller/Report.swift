@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import Alamofire
 
 class Report: UITableViewCell {
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
