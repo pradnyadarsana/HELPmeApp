@@ -18,7 +18,7 @@ class ViewController: UIViewController {
 
         
     }
-    override func viewDidAppear(_ animated: Bool) {// Autologin masuk ke Home
+    override func viewDidAppear(_ animated: Bool) { // Autologin masuk ke Home
         super.viewDidAppear(true)
         if Auth.auth().currentUser != nil {
             self.performSegue(withIdentifier: "loginSegue", sender: (Any).self)

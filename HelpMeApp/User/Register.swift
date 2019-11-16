@@ -12,7 +12,7 @@ import FirebaseAuth
 class Register: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
     @IBOutlet weak var fullname: UITextField!
-    @IBOutlet var phonenumber: UITextField!
+    @IBOutlet weak var phonenumber: UITextField!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -64,8 +64,6 @@ class Register: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
         register(auth: Auth.auth())
     }
     
-    
-    
     func register(auth: Auth) {
         auth.createUser(withEmail: email.text!, password: password.text!) { (result, error) in
             guard error == nil else {
@@ -74,25 +72,25 @@ class Register: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
             guard let user = result?.user else {
                 fatalError("Do not know why this would happen")
             }
-            print("registered user: \(user.email)")
+            
+            print("registered user: \(String(describing: user.email))")
+            let email = user.email
+            let profile = UserProfile(id: "", name: self.fullname.text!, phone: self.phonenumber.text!, username: self.username.text!, email: email!, birthdate: self.birthdate.text!, gender: self.gender.text!)
+            let profileAPI = ProfileInterface()
+            let apiUrl = URL(string: "https://helpme.xbanana.id/api/profile")
+            profileAPI.create(user: profile)
             user.reload { (error) in
                 switch user.isEmailVerified {
                 case true:
                     print("users email is verified")
                 case false:
-                    
                     user.sendEmailVerification { (error) in
-                        
                         guard let error = error else {
-                            
-                            
                             self.signOut()
                             return print("user email verification sent")
                         }
-                        
                         self.handleError(error: error)
                     }
-                    
                     print("verify it now")
                     let message = "Email verification sent, verify your account now!"
                     let alert = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
@@ -167,6 +165,7 @@ class Register: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
     func clearField(){
         self.fullname.text = ""
+        self.phonenumber.text = ""
         self.username.text = ""
         self.password.text = ""
         self.email.text = ""

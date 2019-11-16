@@ -19,6 +19,8 @@
 		4AC4B7FB236C9BA800993A99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC4B7F9236C9BA800993A99 /* LaunchScreen.storyboard */; };
 		4AC4B806236C9BA800993A99 /* HelpMeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4B805236C9BA800993A99 /* HelpMeAppTests.swift */; };
 		4AC4B811236C9BA800993A99 /* HelpMeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4B810236C9BA800993A99 /* HelpMeAppUITests.swift */; };
+		4ADEA7FE23801B9F00CB5507 /* ProfileInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADEA7FD23801B9F00CB5507 /* ProfileInterface.swift */; };
+		4ADEA8002380208600CB5507 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADEA7FF2380208600CB5507 /* UserProfile.swift */; };
 		7FC43639ABEDFF5BD4ADD844 /* Pods_HelpMeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCCA66310C1510459543CAB /* Pods_HelpMeApp.framework */; };
 		91D596BC089AFF23426BFD65 /* Pods_HelpMeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B56420096D035398E2EB0FB /* Pods_HelpMeAppTests.framework */; };
 		9E621BE2043DFBBB92FFA53F /* Pods_HelpMeApp_HelpMeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0FBC9B45FF4DA55A7C78C8F /* Pods_HelpMeApp_HelpMeAppUITests.framework */; };
@@ -67,6 +69,8 @@
 		4AC4B80C236C9BA800993A99 /* HelpMeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelpMeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AC4B810236C9BA800993A99 /* HelpMeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpMeAppUITests.swift; sourceTree = "<group>"; };
 		4AC4B812236C9BA800993A99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ADEA7FD23801B9F00CB5507 /* ProfileInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInterface.swift; sourceTree = "<group>"; };
+		4ADEA7FF2380208600CB5507 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		58EDEBE1BDFF7111C28BF7EA /* Pods-HelpMeApp-HelpMeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpMeApp-HelpMeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-HelpMeApp-HelpMeAppUITests/Pods-HelpMeApp-HelpMeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		96436D453984D21D611FE0A9 /* Pods-HelpMeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpMeAppTests.release.xcconfig"; path = "Target Support Files/Pods-HelpMeAppTests/Pods-HelpMeAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		C3E78313E61819A8E7BDA7ED /* Pods-HelpMeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpMeApp.release.xcconfig"; path = "Target Support Files/Pods-HelpMeApp/Pods-HelpMeApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 		4AC4B7ED236C9BA700993A99 /* HelpMeApp */ = {
 			isa = PBXGroup;
 			children = (
+				4ADEA7FC23801B3700CB5507 /* API */,
 				EB7F2491237FF68F00BF362A /* Report */,
 				EB7F2490237FF68A00BF362A /* Tips */,
 				EB7F248F237FF67D00BF362A /* User */,
@@ -163,6 +168,15 @@
 				4AC4B812236C9BA800993A99 /* Info.plist */,
 			);
 			path = HelpMeAppUITests;
+			sourceTree = "<group>";
+		};
+		4ADEA7FC23801B3700CB5507 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4ADEA7FD23801B9F00CB5507 /* ProfileInterface.swift */,
+				4ADEA7FF2380208600CB5507 /* UserProfile.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		A35A880CEBAFB42A95FB7536 /* Frameworks */ = {
@@ -474,6 +488,8 @@
 				4A6F7627236D96B800040495 /* Register.swift in Sources */,
 				4AC4B7F1236C9BA700993A99 /* SceneDelegate.swift in Sources */,
 				EB7F248D237FF66300BF362A /* Tips.swift in Sources */,
+				4ADEA8002380208600CB5507 /* UserProfile.swift in Sources */,
+				4ADEA7FE23801B9F00CB5507 /* ProfileInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

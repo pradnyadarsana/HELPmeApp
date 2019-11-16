@@ -449,7 +449,7 @@
         <!--Profile-->
         <scene sceneID="7CU-iE-1oV">
             <objects>
-                <viewController id="gts-rn-B47" customClass="Profile" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" id="gts-rn-B47" customClass="Profile" customModule="HelpMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KyO-vg-IPK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -582,6 +582,14 @@
                         <viewLayoutGuide key="safeArea" id="VNK-aU-AW9"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle" catalog="system" selectedImage="person.crop.circle" id="DIR-PA-NjZ"/>
+                    <connections>
+                        <outlet property="birthday" destination="k8j-Cu-on9" id="Z5F-Xn-nVT"/>
+                        <outlet property="email" destination="WFS-dK-sZU" id="Pmq-AT-zYg"/>
+                        <outlet property="fullname" destination="b40-Ml-9rm" id="Nwk-Ut-G7B"/>
+                        <outlet property="gender" destination="xSa-cK-yRV" id="ITr-Il-Q9o"/>
+                        <outlet property="phone" destination="lTC-ra-jpg" id="y02-WT-gjn"/>
+                        <outlet property="username" destination="aI0-ET-OoD" id="TUz-It-Y6J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZYj-Uw-V2L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
