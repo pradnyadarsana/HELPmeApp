@@ -20,6 +20,8 @@ class Report: UITableViewCell {
 
         // Configure the view for the selected state banana PANDEK
         // emang kont tribusinya susah kalo ga pake github
+        //sekarang harus mau
+        // aneh ni kok gak mau mau
     }
 
 }
