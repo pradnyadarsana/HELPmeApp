@@ -23,10 +23,12 @@ class TabController: UITabBarController {
                 self.selectedIndex = 0;
             }))
             alert.addAction(UIAlertAction(title: "Report", style: UIAlertAction.Style.default, handler: { (action) in
-                    print("Report Selected")
+                print("Report Selected")
+                ///performSegue(withIdentifier: "CreateReport", sender: TabController())
             }))
             alert.addAction(UIAlertAction(title: "Tips", style: UIAlertAction.Style.default, handler: { (action) in
-                    print("Tips Selected")
+                print("Tips Selected")
+                ///performSegue(withIdentifier: "CreateTips", sender: TabController())
             }))
             self.present(alert, animated: true, completion: nil)
         }

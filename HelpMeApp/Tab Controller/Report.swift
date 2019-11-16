@@ -7,29 +7,55 @@
 //
 
 import UIKit
-
+import Alamofire
 class Report: UITableViewController {
 
+    
+    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var kategori: UILabel!
+    @IBOutlet weak var datetime: UILabel!
+    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var deskripsi: UILabel!
+    
+    let reportManager = ReportInterface()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        reportManager.getAll() { (json) in
+        
+                        for usr in json {
+                            //print("INI USR : \(usr)")
+                            for i in usr{
+                                if(i.key == "data"){
+            //                        print("INI I : \(i)")
+            //                        print("INI I.VALUE : \(i.value)")
+                                    let report = i.value as! [String : Any]
+                                    //print(self.report)
+                                    self.username.text! = report["username"] as! String
+                                    self.kategori.text! = report["kategori"] as! String
+                                    self.datetime.text! = report["datetime"] as! String
+                                    self.address.text! = report["address"] as! String
+                                    self.deskripsi.text! = report["deskripsi"] as! String
+                                }
+                            }
+                        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller self.navigationItem.rightBarButtonItem = self.editButtonItem
+        }
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
 
     /*

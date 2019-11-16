@@ -21,6 +21,8 @@
 		4AC4B811236C9BA800993A99 /* HelpMeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4B810236C9BA800993A99 /* HelpMeAppUITests.swift */; };
 		4ADEA7FE23801B9F00CB5507 /* ProfileInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADEA7FD23801B9F00CB5507 /* ProfileInterface.swift */; };
 		4ADEA8002380208600CB5507 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADEA7FF2380208600CB5507 /* UserProfile.swift */; };
+		4ADEA8022380978400CB5507 /* ReportInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADEA8012380978400CB5507 /* ReportInterface.swift */; };
+		4ADEA804238097A000CB5507 /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADEA803238097A000CB5507 /* ReportModel.swift */; };
 		7FC43639ABEDFF5BD4ADD844 /* Pods_HelpMeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCCA66310C1510459543CAB /* Pods_HelpMeApp.framework */; };
 		91D596BC089AFF23426BFD65 /* Pods_HelpMeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B56420096D035398E2EB0FB /* Pods_HelpMeAppTests.framework */; };
 		9E621BE2043DFBBB92FFA53F /* Pods_HelpMeApp_HelpMeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0FBC9B45FF4DA55A7C78C8F /* Pods_HelpMeApp_HelpMeAppUITests.framework */; };
@@ -71,6 +73,8 @@
 		4AC4B812236C9BA800993A99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ADEA7FD23801B9F00CB5507 /* ProfileInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInterface.swift; sourceTree = "<group>"; };
 		4ADEA7FF2380208600CB5507 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		4ADEA8012380978400CB5507 /* ReportInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportInterface.swift; sourceTree = "<group>"; };
+		4ADEA803238097A000CB5507 /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
 		58EDEBE1BDFF7111C28BF7EA /* Pods-HelpMeApp-HelpMeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpMeApp-HelpMeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-HelpMeApp-HelpMeAppUITests/Pods-HelpMeApp-HelpMeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		96436D453984D21D611FE0A9 /* Pods-HelpMeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpMeAppTests.release.xcconfig"; path = "Target Support Files/Pods-HelpMeAppTests/Pods-HelpMeAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		C3E78313E61819A8E7BDA7ED /* Pods-HelpMeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpMeApp.release.xcconfig"; path = "Target Support Files/Pods-HelpMeApp/Pods-HelpMeApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +179,8 @@
 			children = (
 				4ADEA7FD23801B9F00CB5507 /* ProfileInterface.swift */,
 				4ADEA7FF2380208600CB5507 /* UserProfile.swift */,
+				4ADEA803238097A000CB5507 /* ReportModel.swift */,
+				4ADEA8012380978400CB5507 /* ReportInterface.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -480,9 +486,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBE4DD222375C818002D8BA2 /* TabController.swift in Sources */,
+				4ADEA8022380978400CB5507 /* ReportInterface.swift in Sources */,
 				EB7F2489237FDE0D00BF362A /* Profile.swift in Sources */,
 				4AC4B7F3236C9BA700993A99 /* ViewController.swift in Sources */,
 				4AC4B7EF236C9BA700993A99 /* AppDelegate.swift in Sources */,
+				4ADEA804238097A000CB5507 /* ReportModel.swift in Sources */,
 				EBFEC5672378A32D00B0C466 /* editProfile.swift in Sources */,
 				EB7F24932380078900BF362A /* Report.swift in Sources */,
 				4A6F7627236D96B800040495 /* Register.swift in Sources */,
