@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zPQ-tj-wPE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zPQ-tj-wPE">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -259,7 +259,7 @@
             </objects>
             <point key="canvasLocation" x="295.6521739130435" y="1682.608695652174"/>
         </scene>
-        <!--View Controller-->
+        <!--Create-->
         <scene sceneID="RwR-JP-Lnd">
             <objects>
                 <viewController id="sq7-ld-2w4" sceneMemberID="viewController">
@@ -269,7 +269,7 @@
                         <color key="backgroundColor" red="0.20915581059999999" green="0.74232024429999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="7mH-XZ-HPM"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="plus.circle" catalog="system" selectedImage="plus.circle" id="Qzq-Js-Vcn"/>
+                    <tabBarItem key="tabBarItem" title="Create" image="plus.circle" catalog="system" selectedImage="plus.circle" id="Qzq-Js-Vcn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DYB-Rh-Oqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -470,7 +470,7 @@
                                 <rect key="frame" x="0.0" y="327" width="414" height="360"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ellipses.bubble" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="InI-2r-fQR">
-                                        <rect key="frame" x="48" y="81.333333333333329" width="30" height="30"/>
+                                        <rect key="frame" x="48" y="81.333333333333329" width="30" height="29.666666666666671"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30.666666666666657" id="Fwl-5C-cVp"/>
                                             <constraint firstAttribute="width" constant="30" id="S0r-bv-IB6"/>
@@ -501,22 +501,22 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="phone" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ekg-vc-ZuA">
-                                        <rect key="frame" x="48" y="134.33333333333334" width="30" height="30"/>
+                                        <rect key="frame" x="48" y="134.33333333333334" width="30" height="29.666666666666671"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="calendar.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cAV-6r-MbS">
-                                        <rect key="frame" x="48" y="186" width="30" height="30"/>
+                                        <rect key="frame" x="48" y="186" width="30" height="29.666666666666671"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="Xh8-Rv-ddp"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="249" image="person.2.square.stack" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9BZ-7z-hhY">
-                                        <rect key="frame" x="48" y="233.33333333333334" width="30" height="30.000000000000028"/>
+                                        <rect key="frame" x="48" y="233.33333333333334" width="30" height="29.666666666666686"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28.333333333333343" id="K1p-mM-BGo"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="square.and.pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="s5O-sZ-T2q">
-                                        <rect key="frame" x="278" y="6.9999999999999964" width="30" height="19.333333333333336"/>
+                                        <rect key="frame" x="278" y="6.9999999999999947" width="30" height="19.333333333333353"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="UhT-lU-GAe"/>
                                         </constraints>
@@ -1041,18 +1041,18 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar.circle" catalog="system" width="64" height="62"/>
+        <image name="calendar.circle" catalog="system" width="64" height="60"/>
         <image name="cm_photo_camera_white" width="24" height="24"/>
         <image name="cm_photo_library_white" width="24" height="24"/>
         <image name="ellipses.bubble" catalog="system" width="64" height="54"/>
         <image name="house" catalog="system" width="64" height="54"/>
-        <image name="info.circle" catalog="system" width="64" height="62"/>
-        <image name="location" catalog="system" width="64" height="60"/>
+        <image name="info.circle" catalog="system" width="64" height="60"/>
+        <image name="location" catalog="system" width="64" height="56"/>
         <image name="logo-main" width="361" height="301"/>
-        <image name="person.2.square.stack" catalog="system" width="54" height="64"/>
-        <image name="person.crop.circle" catalog="system" width="64" height="62"/>
-        <image name="phone" catalog="system" width="64" height="58"/>
-        <image name="plus.circle" catalog="system" width="64" height="62"/>
+        <image name="person.2.square.stack" catalog="system" width="56" height="64"/>
+        <image name="person.crop.circle" catalog="system" width="64" height="60"/>
+        <image name="phone" catalog="system" width="64" height="56"/>
+        <image name="plus.circle" catalog="system" width="64" height="60"/>
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
         <image name="star" catalog="system" width="64" height="58"/>
     </resources>
