@@ -19,6 +19,7 @@ class Report: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state banana PANDEK
+        // emang kont tribusinya susah kalo ga pake github
     }
 
 }
