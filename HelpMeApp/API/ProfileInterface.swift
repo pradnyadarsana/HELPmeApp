@@ -64,9 +64,11 @@ class ProfileInterface {
         }
     }
     
-    func update(id:String, user:UserProfile)
+    func update(user:UserProfile)
     {
-        let profileJSON = ["id": id,"name": user.name, "phone": user.phone, "email": user.email, "username": user.username, "birth": user.birthdate, "gender": user.gender]
+        let profileJSON = ["id": user.id,"name": user.name, "phone": user.phone, "email": user.email, "username": user.username, "birth": user.birthdate, "gender": user.gender]
+        
+        print(profileJSON)
           
         let URL:String = "https://helpme.xbanana.id/api/profile";
         
@@ -74,7 +76,7 @@ class ProfileInterface {
         Alamofire.request(URL,
                           method: .put,
                           parameters: profileJSON)
-            .validate()
+            .validate(statusCode: 200..<600)
             .responseJSON { response in
                 // 3 - HTTP response handle
                 guard response.result.isSuccess else {

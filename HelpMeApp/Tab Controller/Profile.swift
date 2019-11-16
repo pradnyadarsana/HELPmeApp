@@ -18,11 +18,12 @@ class Profile: UIViewController {
     @IBOutlet weak var birthday: UILabel!
     @IBOutlet weak var gender: UILabel!
     
-    
+    let profileManager = ProfileInterface()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let profileManager = ProfileInterface()
+        // Do any additional setup after loading the view.
+        
         profileManager.getProfileByEmail(){ (json) in
             
             //print(json)
@@ -43,13 +44,23 @@ class Profile: UIViewController {
                     }
                 }
             }
-            
         }
-        
-        
-        // Do any additional setup after loading the view.
     }
-
-    
-
+    @IBAction func btnEdit(_ sender: Any) {
+        profileManager.getProfileByEmail(){ (json) in
+            for usr in json {
+                for i in usr{
+                    if(i.key == "data"){
+                        let profile = i.value as! [String : Any]
+                        let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let editView = Storyboard.instantiateViewController(identifier: "editProfileVC") as! editProfile
+                        
+                        editView.id = profile["id"] as! String
+                        editView.profile = profile
+                        self.navigationController?.showDetailViewController(editView, sender: (Any).self)
+                    }
+                }
+            }
+        }
+    }
 }

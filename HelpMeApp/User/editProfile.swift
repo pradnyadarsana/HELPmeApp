@@ -18,15 +18,19 @@ class editProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBOutlet var birthdate: UITextField!
     var list = ["Male", "Female"]
     
-
+    let profileManager = ProfileInterface()
+    
+    var profile:[String:Any] = ["":""]
+    var id:String = ""
+    
     private var datePicker: UIDatePicker?
     var picker  = UIPickerView()
-    @IBAction func btnConfirm(_ sender: Any) {
-        
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setForm()
+        print("INI ID : \(id)")
+        print("INI PROFILE : \(profile)")
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .date
         datePicker?.addTarget(self, action: #selector(editProfile.dateChanged(datePicker:)), for: .valueChanged)
@@ -60,6 +64,25 @@ class editProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         view.endEditing(true)
     }
     
+    func setForm(){
+        self.fullname.text = self.profile["name"] as! String
+        self.phonenumber.text = self.profile["phone"] as! String
+        self.email.text = self.profile["email"] as! String
+        self.username.text = self.profile["username"] as! String
+        self.gender.text = self.profile["gender"] as! String
+        self.birthdate.text = self.profile["birth"] as! String
+    }
     
+    @IBAction func btnConfirm(_ sender: Any) {
+        let profile = UserProfile(id: self.id, name: self.fullname.text!, phone: self.phonenumber.text!, username: self.username.text!, email: self.email.text!, birthdate: self.birthdate.text!, gender: self.gender.text!)
+        profileManager.update(user: profile)
+//        let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let profileView = Storyboard.instantiateViewController(identifier: "ProfileVC") as! Profile
+//
+////        editView.id = profile["id"] as! String
+////        editView.profile = profile
+//        self.navigationController?.pushViewController(profileView, animated: true)
+        
+    }
 
 }

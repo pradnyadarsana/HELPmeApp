@@ -470,7 +470,7 @@
                                 <rect key="frame" x="0.0" y="327" width="414" height="360"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFS-dK-sZU">
-                                        <rect key="frame" x="94" y="83" width="273" height="25"/>
+                                        <rect key="frame" x="94" y="82.666666666666686" width="273" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="PeD-eD-Poh"/>
                                         </constraints>
@@ -479,7 +479,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTC-ra-jpg">
-                                        <rect key="frame" x="94" y="137" width="273" height="24"/>
+                                        <rect key="frame" x="94" y="136.66666666666669" width="273" height="24.333333333333343"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24.333333333333343" id="LQn-aw-Ezv"/>
                                         </constraints>
@@ -526,9 +526,7 @@
                                             <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="LYV-lr-eFY" kind="popoverPresentation" popoverAnchorView="kx6-dJ-O1S" id="dJj-bk-aiI">
-                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                            </segue>
+                                            <action selector="btnEdit:" destination="gts-rn-B47" eventType="touchUpInside" id="UwD-35-Tf0"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ellipses.bubble" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="InI-2r-fQR">
@@ -781,9 +779,9 @@
         <!--Edit Profile-->
         <scene sceneID="hLq-um-4xy">
             <objects>
-                <viewController id="LYV-lr-eFY" customClass="editProfile" customModule="HelpMeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editProfileVC" id="LYV-lr-eFY" customClass="editProfile" customModule="HelpMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MdE-he-7op">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="W3O-oW-ONc">
@@ -906,7 +904,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpd-Ia-HAg">
-                                <rect key="frame" x="100" y="572" width="209" height="30"/>
+                                <rect key="frame" x="100" y="592" width="209" height="30"/>
                                 <color key="backgroundColor" red="0.12552187649657243" green="0.44713696407500525" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Vaz-D9-qM1"/>
