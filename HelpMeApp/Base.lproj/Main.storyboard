@@ -622,11 +622,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="VKu-QI-oWK" customClass="Report" customModule="HelpMeApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="200"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReportCell" id="VKu-QI-oWK" customClass="ReportCustomCell" customModule="HelpMeApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VKu-QI-oWK" id="Pee-dT-6Ec">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8v-6b-Pb1">
@@ -677,11 +677,11 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="address" destination="k6j-WA-i2U" id="fNP-Sh-wKk"/>
-                                    <outlet property="datetime" destination="2Kl-nt-ttG" id="v1u-iX-beC"/>
-                                    <outlet property="deskripsi" destination="kfd-yH-shV" id="uYO-Sp-EeA"/>
-                                    <outlet property="kategori" destination="eXU-6v-wvx" id="CDm-ZB-GE0"/>
-                                    <outlet property="username" destination="q8v-6b-Pb1" id="pGE-vL-F8y"/>
+                                    <outlet property="address" destination="k6j-WA-i2U" id="RhL-DL-aLJ"/>
+                                    <outlet property="category" destination="eXU-6v-wvx" id="V5e-O9-2Ra"/>
+                                    <outlet property="datetime" destination="2Kl-nt-ttG" id="daV-bc-vR1"/>
+                                    <outlet property="desc" destination="kfd-yH-shV" id="S0q-aD-hJW"/>
+                                    <outlet property="username" destination="q8v-6b-Pb1" id="G69-pB-jJw"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

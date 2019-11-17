@@ -51,7 +51,7 @@ class ReportInterface {
                     return
                 }
                 print("########   GET RESPONSE REPORT    ########")
-                print(response)
+                //print(response)
                 print(response.value! as! [String: Any])
                 completion([response.result.value as! [String : Any]])
                 
@@ -61,7 +61,7 @@ class ReportInterface {
     
     func update(report:ReportModel)
     {
-       let profileJSON = ["kategori": report.kategori, "img": report.img, "address": report.address, "description": report.description, "username": report.username]
+        let profileJSON = ["id" : report.id, "kategori": report.kategori, "img": report.img, "address": report.address, "description": report.description, "username": report.username]
           
         let URL:String = "https://helpme.xbanana.id/api/report";
         
@@ -81,9 +81,9 @@ class ReportInterface {
                 print()
         }
     }
-    func delete(report:ReportModel)
+    func delete(id: String)
     {
-       let profileJSON = ["id": report.id]
+       let profileJSON = ["id": id]
           
         let URL:String = "https://helpme.xbanana.id/api/report";
         

@@ -9,34 +9,35 @@
 import UIKit
 import Alamofire
 class Report: UITableViewController {
-
-    
-    @IBOutlet weak var username: UILabel!
-    @IBOutlet weak var kategori: UILabel!
-    @IBOutlet weak var datetime: UILabel!
-    @IBOutlet weak var address: UILabel!
-    @IBOutlet weak var deskripsi: UILabel!
-    
     let reportManager = ReportInterface()
+    var allReport = [ReportModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         reportManager.getAll() { (json) in
-        
-                        for usr in json {
-                            //print("INI USR : \(usr)")
-                            for i in usr{
+                        for rep in json {
+                            print("INI REP : \(rep)")
+                            for i in rep{
                                 if(i.key == "data"){
-            //                        print("INI I : \(i)")
-            //                        print("INI I.VALUE : \(i.value)")
-                                    let report = i.value as! [String : Any]
-                                    //print(self.report)
-                                    self.username.text! = report["username"] as! String
-                                    self.kategori.text! = report["kategori"] as! String
-                                    self.datetime.text! = report["datetime"] as! String
-                                    self.address.text! = report["address"] as! String
-                                    self.deskripsi.text! = report["deskripsi"] as! String
+                                    print("INI I : \(i)")
+                                    print("INI I.VALUE : \(i.value)")
+                                    let report = i.value as! [[String : Any]]
+                                    var i = 0
+                                    for j in report {
+                                        //print("INI J : \(j)")
+                                        let data = ReportModel(json: j as! [String: Any])
+                                        self.allReport.append(data)
+                                        print("INI ALL REPORT 1 1 : \(self.allReport[i].description)")
+                                        i+=1
+                                    }
+                                    self.tableView.reloadData()
+                                    
+//                                    self.username.text! = report["username"] as! String
+//                                    self.kategori.text! = report["kategori"] as! String
+//                                    self.datetime.text! = report["datetime"] as! String
+//                                    self.address.text! = report["address"] as! String
+//                                    self.deskripsi.text! = report["deskripsi"] as! String
                                 }
                             }
                         }
@@ -44,6 +45,8 @@ class Report: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller self.navigationItem.rightBarButtonItem = self.editButtonItem
         }
+        
+        print("INI ALL REPORT : \(self.allReport)")
     }
 
     // MARK: - Table view data source
@@ -55,7 +58,14 @@ class Report: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return self.allReport.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:ReportCustomCell = tableView.dequeueReusableCell(withIdentifier: "ReportCell", for: indexPath) as! ReportCustomCell
+        cell.setValue(self.allReport[indexPath.row], forKey: "")
+        
+        return cell
     }
 
     /*
