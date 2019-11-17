@@ -12,8 +12,8 @@ class ReportCustomCell: UITableViewCell {
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var datetime: UILabel!
     @IBOutlet weak var category: UILabel!
-    @IBOutlet weak var address: UILabel!
-    @IBOutlet weak var desc: UILabel!
+    @IBOutlet weak var address: UITextView!
+    @IBOutlet weak var desc: UITextView!
     
     var id:String = ""
     override func awakeFromNib() {

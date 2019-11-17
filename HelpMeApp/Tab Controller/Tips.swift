@@ -9,16 +9,44 @@
 import UIKit
 
 class Tips: UITableViewController {
+    let tipsManager = TipsInterface()
+    var allTips = [TipsModel]()
     
-    
-    @IBOutlet weak var namauser: UILabel!
-    @IBOutlet weak var waktu: UILabel!
-    @IBOutlet weak var judul: UILabel!
-    @IBOutlet weak var deskripsien: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+                tipsManager.getAll() { (json) in
+                                for rep in json {
+                                    print("INI REP : \(rep)")
+                                    for i in rep{
+                                        if(i.key == "data"){
+                                            print("INI I : \(i)")
+                                            print("INI I.VALUE : \(i.value)")
+                                            let tips = i.value as! [[String : Any]]
+                                            var i = 0
+                                            for j in tips {
+                                                //print("INI J : \(j)")
+                                                let data = TipsModel(json: j as! [String: Any])
+                                                self.allTips.append(data)
+                                                print("INI ALL REPORT 1 1 : \(self.allTips[i].deskripsiTips)")
+                                                i+=1
+                                            }
+                                            self.tableView.reloadData()
+                                            
+        //                                    self.username.text! = report["username"] as! String
+        //                                    self.kategori.text! = report["kategori"] as! String
+        //                                    self.datetime.text! = report["datetime"] as! String
+        //                                    self.address.text! = report["address"] as! String
+        //                                    self.deskripsi.text! = report["deskripsi"] as! String
+                                        }
+                                    }
+                                }
+                // Uncomment the following line to preserve selection between presentations
+                // self.clearsSelectionOnViewWillAppear = false
+                // Uncomment the following line to display an Edit button in the navigation bar for this view controller self.navigationItem.rightBarButtonItem = self.editButtonItem
+                }
+                self.tableView.reloadData()
+                print("INI ALL REPORT : \(self.allTips)")
     }
 
     // MARK: - Table view data source
@@ -30,7 +58,13 @@ class Tips: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return self.allTips.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:TipsCustomCell = tableView.dequeueReusableCell(withIdentifier: "TipsCell", for: indexPath) as! TipsCustomCell
+        cell.setValue(self.allTips[indexPath.row], forKey: "")
+        
+        return cell
     }
 
     /*
