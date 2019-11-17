@@ -6,11 +6,16 @@
 //  Copyright © 2019 Smith. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 class TipsCustomCell: UITableViewCell {
 
+    
+    @IBOutlet weak var usernameTips: UILabel!
+    @IBOutlet weak var datetimeTips: UILabel!
+    @IBOutlet weak var titleTips: UILabel!
+    @IBOutlet weak var deskripsiTips: UITextView!
     
     
     var id:String = ""
@@ -21,13 +26,15 @@ class TipsCustomCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        ///Konfigurasi untuk view saat state Terseleksi
     }
     
-    func setValue(_ value: ReportModel?, forKey key: String) {
+    func setValue(_ value: TipsModel?, forKey key: String) {
         self.id = value!.id
-        //self.username.text = value?.username
+        self.usernameTips.text = value?.usernameTips;
+        self.titleTips.text = value?.titleTips;
+        self.deskripsiTips.text = value?.deskripsiTips;
+        self.datetimeTips.text = value?.datetimeTips;
 
     }
 

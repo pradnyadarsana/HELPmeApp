@@ -58,8 +58,8 @@ class CreateReport: UIViewController {
         category.text = ""
         img.image = UIImage(systemName: "cm_photo_camera_white")
         address.text = "Location"
-        desc.text = ""
-        self.imageLink = ""
+        desc.text = " "
+        self.imageLink = " "
     }
     
     //Calls this function when the tap is recognized.

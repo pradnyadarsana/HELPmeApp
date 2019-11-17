@@ -17,6 +17,15 @@ class Profile: UIViewController {
     @IBOutlet weak var phone: UILabel!
     @IBOutlet weak var birthday: UILabel!
     @IBOutlet weak var gender: UILabel!
+    @IBAction func btnLogout(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
+        
+    }
     
     let profileManager = ProfileInterface()
     

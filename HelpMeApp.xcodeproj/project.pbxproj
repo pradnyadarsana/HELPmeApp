@@ -34,7 +34,7 @@
 		EB7F24932380078900BF362A /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7F24922380078900BF362A /* Report.swift */; };
 		EB80E85D23816BAD00F58046 /* TipsInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80E85C23816BAD00F58046 /* TipsInterface.swift */; };
 		EB80E85F23816C7F00F58046 /* TipsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80E85E23816C7F00F58046 /* TipsModel.swift */; };
-		EB80E8612381717000F58046 /* TipsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80E8602381717000F58046 /* TipsCustomCell.swift */; };
+		EB80E86323818DE500F58046 /* TipsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80E86223818DE500F58046 /* TipsCustomCell.swift */; };
 		EBE4DD222375C818002D8BA2 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4DD212375C818002D8BA2 /* TabController.swift */; };
 		EBFEC5672378A32D00B0C466 /* editProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFEC5662378A32D00B0C466 /* editProfile.swift */; };
 /* End PBXBuildFile section */
@@ -92,7 +92,7 @@
 		EB7F24922380078900BF362A /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		EB80E85C23816BAD00F58046 /* TipsInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsInterface.swift; sourceTree = "<group>"; };
 		EB80E85E23816C7F00F58046 /* TipsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsModel.swift; sourceTree = "<group>"; };
-		EB80E8602381717000F58046 /* TipsCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCustomCell.swift; sourceTree = "<group>"; };
+		EB80E86223818DE500F58046 /* TipsCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCustomCell.swift; sourceTree = "<group>"; };
 		EBE4DD212375C818002D8BA2 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		EBFEC5662378A32D00B0C466 /* editProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editProfile.swift; sourceTree = "<group>"; };
 		F2E74BC301A6AF05EA1B398A /* Pods-HelpMeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpMeApp.release.xcconfig"; path = "Target Support Files/Pods-HelpMeApp/Pods-HelpMeApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -230,7 +230,7 @@
 				EB7F2488237FDE0D00BF362A /* Profile.swift */,
 				EBE4DD212375C818002D8BA2 /* TabController.swift */,
 				4A2B72C22381156200FB00DE /* ReportCustomCell.swift */,
-				EB80E8602381717000F58046 /* TipsCustomCell.swift */,
+				EB80E86223818DE500F58046 /* TipsCustomCell.swift */,
 			);
 			path = "Tab Controller";
 			sourceTree = "<group>";
@@ -503,7 +503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB80E8612381717000F58046 /* TipsCustomCell.swift in Sources */,
+				EB80E86323818DE500F58046 /* TipsCustomCell.swift in Sources */,
 				EBE4DD222375C818002D8BA2 /* TabController.swift in Sources */,
 				4A2B72C523811FB200FB00DE /* CreateReport.swift in Sources */,
 				4ADEA8022380978400CB5507 /* ReportInterface.swift in Sources */,
