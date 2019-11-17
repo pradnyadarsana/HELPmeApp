@@ -25,6 +25,9 @@ class TabController: UITabBarController {
             alert.addAction(UIAlertAction(title: "Report", style: UIAlertAction.Style.default, handler: { (action) in
                 print("Report Selected")
                 ///performSegue(withIdentifier: "CreateReport", sender: TabController())
+                let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let editView = Storyboard.instantiateViewController(identifier: "createReportVC") as! CreateReport
+                self.navigationController?.pushViewController(editView, animated: true)
             }))
             alert.addAction(UIAlertAction(title: "Tips", style: UIAlertAction.Style.default, handler: { (action) in
                 print("Tips Selected")

@@ -23,7 +23,7 @@ class ReportInterface {
         Alamofire.request(URL,
                           method: .post,
                           parameters: profileJSON)
-            .validate()
+            .validate(statusCode: 200..<600)
             .responseJSON { response in
                 // 3 - HTTP response handle
                 guard response.result.isSuccess else {
@@ -83,7 +83,7 @@ class ReportInterface {
     }
     func delete(id: String)
     {
-       let profileJSON = ["id": id]
+        let profileJSON = ["id": id]
           
         let URL:String = "https://helpme.xbanana.id/api/report";
         
