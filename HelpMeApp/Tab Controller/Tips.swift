@@ -57,11 +57,30 @@ class Tips: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-            if editingStyle == .delete {
-                let id = self.allTips[indexPath.row].id
-                print("INI ID : \(id)")
-                self.tipsManager.delete(id: id)
-            }
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//            if editingStyle == .delete {
+//                let id = self.allTips[indexPath.row].id
+//                print("INI ID : \(id)")
+//                self.tipsManager.delete(id: id)
+//            }
+//    }
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let contextItem = UIContextualAction(style: .destructive, title: "Delete") { (contextualAction, view, boolValue) in
+            let id = self.allTips[indexPath.row].id
+            print("INI ID : \(id)")
+            self.tipsManager.delete(id: id) // fungsi delete swipe bagian kanan
         }
+        let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
+
+        return swipeActions
+    }
+
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let contextItem = UIContextualAction(style: .normal, title: "Edit") { (contextualAction, view, boolValue) in
+            print("Do Editing...") // fungsi edit swipe dibagian kiri
+        }
+        let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
+
+        return swipeActions
+    }
 }
