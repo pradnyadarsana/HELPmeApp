@@ -9,14 +9,30 @@
 import UIKit
 
 class UpdateReport: UIViewController {
-
+    
+    @IBOutlet var category: UITextField!
+    @IBOutlet var img: UIImageView!
+    @IBOutlet var address: UILabel!
+    @IBOutlet var desc: UITextView!
+    
+    var imgURL:String = ""
+    var report = ReportModel(id: "", kategori: "", img: "", address: "", description: "", username: "", datetime: "");
+    
+    var reportManager = ReportInterface()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        category.text = report.kategori
+        imgURL = report.img
+        address.text = report.address
+        desc.text = report.description
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func confirmBtn(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 

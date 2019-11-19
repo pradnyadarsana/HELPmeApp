@@ -82,7 +82,25 @@ class Report: UITableViewController {
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let contextItem = UIContextualAction(style: .normal, title: "Edit") { (contextualAction, view, boolValue) in
             print("Do Editing...") // fungsi edit swipe dibagian kiri
+            let report = self.allReport[indexPath.row]
+            print("INI ID : \(report.id)")
+            print("INI DATA YANG DIEDIT : \(report.kategori)")
+            print("INI DATA YANG DIEDIT : \(report.img)")
+            print("INI DATA YANG DIEDIT : \(report.address)")
+            print("INI DATA YANG DIEDIT : \(report.description)")
+            let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let editView = Storyboard.instantiateViewController(identifier: "updateReportVC") as! UpdateReport
+            
+//            editView.id = report.id
+//            editView.category.text! = report.kategori
+//            editView.imgURL = report.img
+//            editView.address.text = report.address
+//            editView.desc.text = report.description
+            editView.report = report
+            self.navigationController?.showDetailViewController(editView, sender: (Any).self)
+//            self.performSegue(withIdentifier: "updateReportSegue", sender: (Any).self)
         }
+        
         let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
 
         return swipeActions

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zPQ-tj-wPE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zPQ-tj-wPE">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -537,7 +537,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="phone" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ekg-vc-ZuA">
-                                        <rect key="frame" x="48" y="107.33333333333331" width="30" height="44"/>
+                                        <rect key="frame" x="48" y="107.33333333333333" width="30" height="43.666666666666657"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="calendar.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cAV-6r-MbS">
                                         <rect key="frame" x="48" y="186" width="30" height="29.666666666666671"/>
@@ -546,7 +546,7 @@
                                         <rect key="frame" x="48" y="233.33333333333334" width="30" height="29.666666666666686"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="square.and.pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="s5O-sZ-T2q">
-                                        <rect key="frame" x="278" y="-3.0000000000000036" width="30" height="19.333333333333336"/>
+                                        <rect key="frame" x="278" y="-3.0000000000000036" width="30" height="19.333333333333339"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="pQ4-5Y-J1O"/>
                                         </constraints>
@@ -561,7 +561,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ellipses.bubble" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="InI-2r-fQR">
-                                        <rect key="frame" x="48" y="84.333333333333329" width="30" height="3"/>
+                                        <rect key="frame" x="48" y="84.333333333333329" width="30" height="2.6666666666666714"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="OPT-9d-0Rj"/>
                                         </constraints>
@@ -728,6 +728,9 @@
                         </prototypes>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Report" image="house" catalog="system" selectedImage="house" id="KQm-Ze-saq"/>
+                    <connections>
+                        <segue destination="EZZ-Qd-94z" kind="showDetail" identifier="updateReportSegue" id="7sT-xx-vLx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OPr-dJ-j2b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1112,7 +1115,7 @@
             <objects>
                 <viewController storyboardIdentifier="updateReportVC" id="EZZ-Qd-94z" customClass="UpdateReport" customModule="HelpMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TkM-UK-ZKr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I9i-4y-EMN">
@@ -1132,30 +1135,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoS-vE-47t">
-                                <rect key="frame" x="183" y="613" width="49" height="30"/>
-                                <state key="normal" title="Submit">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="submitBtn:" destination="EZZ-Qd-94z" eventType="touchUpInside" id="vta-Pz-YJ3"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" image="cm_photo_camera_white" translatesAutoresizingMaskIntoConstraints="NO" id="GVs-hR-gOk">
-                                <rect key="frame" x="327" y="231" width="30" height="48"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="cm_photo_camera_white" translatesAutoresizingMaskIntoConstraints="NO" id="GVs-hR-gOk">
+                                <rect key="frame" x="327" y="231" width="30" height="24"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="247" image="location" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gWA-n7-8oM">
-                                <rect key="frame" x="332" y="323" width="20.666666666666686" height="19.333333333333314"/>
+                                <rect key="frame" x="332" y="299" width="20.666666666666686" height="19.333333333333314"/>
                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Take a Picture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qh2-u7-ZZG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a Picture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qh2-u7-ZZG">
                                 <rect key="frame" x="57" y="231" width="108" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGY-0v-6MG">
-                                <rect key="frame" x="59" y="298" width="66" height="21"/>
+                                <rect key="frame" x="59" y="298" width="257" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1167,21 +1161,30 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iTq-Nq-IRK">
-                                <rect key="frame" x="57" y="447" width="300" height="138"/>
+                                <rect key="frame" x="57" y="447" width="300" height="118"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoS-vE-47t">
+                                <rect key="frame" x="173" y="593" width="68" height="30"/>
+                                <state key="normal" title="Confirm">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmBtn:" destination="EZZ-Qd-94z" eventType="touchUpInside" id="cgP-Hr-Zg9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20915581059999999" green="0.74232024429999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="d9b-XJ-GdQ" firstAttribute="trailing" secondItem="GVs-hR-gOk" secondAttribute="trailing" constant="57" id="19C-tS-sge"/>
                             <constraint firstItem="d9b-XJ-GdQ" firstAttribute="trailing" secondItem="I9i-4y-EMN" secondAttribute="trailing" constant="57" id="2Fm-T0-1YW"/>
                             <constraint firstItem="Y2p-9k-MT0" firstAttribute="leading" secondItem="d9b-XJ-GdQ" secondAttribute="leading" constant="142" id="7yW-94-Iux"/>
-                            <constraint firstItem="d9b-XJ-GdQ" firstAttribute="trailing" secondItem="DGY-0v-6MG" secondAttribute="trailing" constant="289" id="8HV-lP-tbR"/>
-                            <constraint firstItem="NoS-vE-47t" firstAttribute="leading" secondItem="d9b-XJ-GdQ" secondAttribute="leading" constant="183" id="8xv-yQ-CgH"/>
+                            <constraint firstItem="d9b-XJ-GdQ" firstAttribute="trailing" secondItem="DGY-0v-6MG" secondAttribute="trailing" constant="98" id="8HV-lP-tbR"/>
+                            <constraint firstItem="NoS-vE-47t" firstAttribute="leading" secondItem="d9b-XJ-GdQ" secondAttribute="leading" constant="173" id="8xv-yQ-CgH"/>
                             <constraint firstItem="d9b-XJ-GdQ" firstAttribute="trailing" secondItem="Y2p-9k-MT0" secondAttribute="trailing" constant="141" id="98C-Ca-KkV"/>
                             <constraint firstItem="NoS-vE-47t" firstAttribute="top" secondItem="iTq-Nq-IRK" secondAttribute="bottom" constant="28" id="CRZ-TW-i8P"/>
                             <constraint firstItem="d9b-XJ-GdQ" firstAttribute="bottom" secondItem="NoS-vE-47t" secondAttribute="bottom" constant="93" id="Cjy-lX-qCV"/>
@@ -1195,7 +1198,7 @@
                             <constraint firstItem="d9b-XJ-GdQ" firstAttribute="trailing" secondItem="iTq-Nq-IRK" secondAttribute="trailing" constant="57" id="QZ2-gH-sVn"/>
                             <constraint firstItem="Y2p-9k-MT0" firstAttribute="top" secondItem="d9b-XJ-GdQ" secondAttribute="top" constant="33" id="TtL-Ux-8Gb"/>
                             <constraint firstItem="1UC-M7-mjg" firstAttribute="top" secondItem="DGY-0v-6MG" secondAttribute="bottom" constant="99" id="UGD-iy-pUF"/>
-                            <constraint firstItem="d9b-XJ-GdQ" firstAttribute="trailing" secondItem="NoS-vE-47t" secondAttribute="trailing" constant="182" id="V1M-bK-NCg"/>
+                            <constraint firstItem="d9b-XJ-GdQ" firstAttribute="trailing" secondItem="NoS-vE-47t" secondAttribute="trailing" constant="173" id="V1M-bK-NCg"/>
                             <constraint firstItem="DGY-0v-6MG" firstAttribute="leading" secondItem="d9b-XJ-GdQ" secondAttribute="leading" constant="59" id="VVn-dv-G0J"/>
                             <constraint firstItem="I9i-4y-EMN" firstAttribute="top" secondItem="2Jq-lu-cbv" secondAttribute="bottom" constant="13" id="W5f-Yf-n1z"/>
                             <constraint firstItem="d9b-XJ-GdQ" firstAttribute="trailing" secondItem="1UC-M7-mjg" secondAttribute="trailing" constant="270" id="X8m-hg-inQ"/>
@@ -1212,29 +1215,30 @@
                     </view>
                     <navigationItem key="navigationItem" id="U4g-QL-kpf"/>
                     <connections>
-                        <outlet property="address" destination="DGY-0v-6MG" id="PPZ-JW-9BI"/>
-                        <outlet property="category" destination="I9i-4y-EMN" id="3x3-N4-Hdy"/>
-                        <outlet property="img" destination="GVs-hR-gOk" id="vHP-I1-bQl"/>
+                        <outlet property="address" destination="DGY-0v-6MG" id="tn4-HY-o4T"/>
+                        <outlet property="category" destination="I9i-4y-EMN" id="DwE-t2-uue"/>
+                        <outlet property="desc" destination="iTq-Nq-IRK" id="abk-c5-81i"/>
+                        <outlet property="img" destination="GVs-hR-gOk" id="twf-Rb-fUR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FhI-ha-VGm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-507" y="2436"/>
+            <point key="canvasLocation" x="-507.24637681159425" y="2435.8695652173915"/>
         </scene>
     </scenes>
     <resources>
-        <image name="calendar.circle" catalog="system" width="64" height="62"/>
+        <image name="calendar.circle" catalog="system" width="64" height="60"/>
         <image name="cm_photo_camera_white" width="24" height="24"/>
         <image name="cm_photo_library_white" width="24" height="24"/>
         <image name="ellipses.bubble" catalog="system" width="64" height="54"/>
         <image name="house" catalog="system" width="64" height="54"/>
-        <image name="info.circle" catalog="system" width="64" height="62"/>
-        <image name="location" catalog="system" width="64" height="60"/>
+        <image name="info.circle" catalog="system" width="64" height="60"/>
+        <image name="location" catalog="system" width="64" height="56"/>
         <image name="logo-main" width="361" height="301"/>
-        <image name="person.2.square.stack" catalog="system" width="54" height="64"/>
-        <image name="person.crop.circle" catalog="system" width="64" height="62"/>
-        <image name="phone" catalog="system" width="64" height="58"/>
-        <image name="plus.circle" catalog="system" width="64" height="62"/>
+        <image name="person.2.square.stack" catalog="system" width="56" height="64"/>
+        <image name="person.crop.circle" catalog="system" width="64" height="60"/>
+        <image name="phone" catalog="system" width="64" height="56"/>
+        <image name="plus.circle" catalog="system" width="64" height="60"/>
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
         <image name="star" catalog="system" width="64" height="58"/>
     </resources>
