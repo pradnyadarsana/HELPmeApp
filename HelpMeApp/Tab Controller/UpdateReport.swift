@@ -8,13 +8,15 @@
 
 import UIKit
 
-class UpdateReport: UIViewController {
+class UpdateReport: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
     @IBOutlet var category: UITextField!
     @IBOutlet var img: UIImageView!
     @IBOutlet var address: UILabel!
     @IBOutlet var desc: UITextView!
     
+    var typeReport = ["Need Help!","Accident","Attention!"]
+    var picker = UIPickerView()
     var imgURL:String = ""
     var report = ReportModel(id: "", kategori: "", img: "", address: "", description: "", username: "", datetime: "");
     
@@ -22,7 +24,12 @@ class UpdateReport: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        picker.delegate = self
+        picker.dataSource = self
+        category.inputView = picker
+        
         category.text = report.kategori
         imgURL = report.img
         address.text = report.address
@@ -32,7 +39,19 @@ class UpdateReport: UIViewController {
     
     @IBAction func confirmBtn(_ sender: Any) {
     }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return typeReport.count
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        category.text = typeReport[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return typeReport[row]
+    }
     /*
     // MARK: - Navigation
 

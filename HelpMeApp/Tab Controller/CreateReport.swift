@@ -8,8 +8,20 @@
 
 import UIKit
 
-class CreateReport: UIViewController {
-
+class CreateReport: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return typeReport.count
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        category.text = typeReport[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return typeReport[row]
+    }
     @IBOutlet weak var category: UITextField!
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var address: UILabel!
@@ -17,16 +29,19 @@ class CreateReport: UIViewController {
     
     var imageLink:String = ""
     var profile:[String: Any] = [:]
-    
+    var typeReport = ["Need Help!","Accident","Attention!"]
+    var picker = UIPickerView()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationController?.isNavigationBarHidden = false
         clearForm()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
+        
+        
+        picker.delegate = self
+        picker.dataSource = self
+        category.inputView = picker
 
         view.addGestureRecognizer(tap)
     }

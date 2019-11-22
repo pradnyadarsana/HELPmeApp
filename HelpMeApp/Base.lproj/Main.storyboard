@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zPQ-tj-wPE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zPQ-tj-wPE">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -537,7 +537,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="phone" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ekg-vc-ZuA">
-                                        <rect key="frame" x="48" y="107.33333333333333" width="30" height="43.666666666666657"/>
+                                        <rect key="frame" x="48" y="107.33333333333331" width="30" height="44"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="calendar.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cAV-6r-MbS">
                                         <rect key="frame" x="48" y="186" width="30" height="29.666666666666671"/>
@@ -546,7 +546,7 @@
                                         <rect key="frame" x="48" y="233.33333333333334" width="30" height="29.666666666666686"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="square.and.pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="s5O-sZ-T2q">
-                                        <rect key="frame" x="278" y="-3.0000000000000036" width="30" height="19.333333333333339"/>
+                                        <rect key="frame" x="278" y="-3.0000000000000036" width="30" height="19.333333333333336"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="pQ4-5Y-J1O"/>
                                         </constraints>
@@ -561,7 +561,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ellipses.bubble" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="InI-2r-fQR">
-                                        <rect key="frame" x="48" y="84.333333333333329" width="30" height="2.6666666666666714"/>
+                                        <rect key="frame" x="48" y="84.333333333333329" width="30" height="3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="OPT-9d-0Rj"/>
                                         </constraints>
@@ -1227,18 +1227,18 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar.circle" catalog="system" width="64" height="60"/>
+        <image name="calendar.circle" catalog="system" width="64" height="62"/>
         <image name="cm_photo_camera_white" width="24" height="24"/>
         <image name="cm_photo_library_white" width="24" height="24"/>
         <image name="ellipses.bubble" catalog="system" width="64" height="54"/>
         <image name="house" catalog="system" width="64" height="54"/>
-        <image name="info.circle" catalog="system" width="64" height="60"/>
-        <image name="location" catalog="system" width="64" height="56"/>
+        <image name="info.circle" catalog="system" width="64" height="62"/>
+        <image name="location" catalog="system" width="64" height="60"/>
         <image name="logo-main" width="361" height="301"/>
-        <image name="person.2.square.stack" catalog="system" width="56" height="64"/>
-        <image name="person.crop.circle" catalog="system" width="64" height="60"/>
-        <image name="phone" catalog="system" width="64" height="56"/>
-        <image name="plus.circle" catalog="system" width="64" height="60"/>
+        <image name="person.2.square.stack" catalog="system" width="54" height="64"/>
+        <image name="person.crop.circle" catalog="system" width="64" height="62"/>
+        <image name="phone" catalog="system" width="64" height="58"/>
+        <image name="plus.circle" catalog="system" width="64" height="62"/>
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
         <image name="star" catalog="system" width="64" height="58"/>
     </resources>
