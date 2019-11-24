@@ -47,9 +47,10 @@ class CreateReport: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     }
     
     @IBAction func submitBtn(_ sender: Any) {
+        let cat = self.category.text
+        let desc = self.desc.text!
         let profileManager = ProfileInterface()
         profileManager.getProfileByEmail(){ (json) in
-                    
                     //print(json)
                     for usr in json {
                         //print("INI USR : \(usr)")
@@ -59,10 +60,10 @@ class CreateReport: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         //                        print("INI I.VALUE : \(i.value)")
                                 self.profile = i.value as! [String : Any]
                                 let report = ReportModel(id: "",
-                                                         kategori: self.category.text!,
+                                                         kategori: cat!,
                                                          img: "default image",
                                                          address: self.address.text!,
-                                                         description: self.desc.text!,
+                                                         description: desc,
                                                          username: self.profile["username"] as! String,
                                                          datetime: "")
                                 print(self.category)
