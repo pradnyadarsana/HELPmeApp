@@ -24,7 +24,6 @@ class TipsModel {
         self.deskripsiTips = json["description"] as? String ?? ""
         self.imgTips = json["img"] as? String ?? ""
         self.datetimeTips = json["datetime"] as? String ?? ""
-        
     }
     
     init(id: String, usernameTips: String, titleTips: String,deskripsiTips: String, imgTips: String, datetimeTips: String) {

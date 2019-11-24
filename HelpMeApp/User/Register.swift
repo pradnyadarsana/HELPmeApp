@@ -116,7 +116,6 @@ class Register: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     }
     
     func handleError(error: Error) {
-        
         /// the user is not registered
         /// user not found
         var message = ""

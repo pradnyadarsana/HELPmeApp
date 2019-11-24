@@ -14,39 +14,10 @@ class Report: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        reportManager.getAll() { (json) in
-                        for rep in json {
-                            print("INI REP : \(rep)")
-                            for i in rep{
-                                if(i.key == "data"){
-                                    print("INI I : \(i)")
-                                    print("INI I.VALUE : \(i.value)")
-                                    let report = i.value as! [[String : Any]]
-                                    var i = 0
-                                    for j in report {
-                                        //print("INI J : \(j)")
-                                        let data = ReportModel(json: j as! [String: Any])
-                                        self.allReport.append(data)
-                                        print("INI ALL REPORT 1 1 : \(self.allReport[i].description)")
-                                        i+=1
-                                    }
-                                    self.tableView.reloadData()
-                                    
-//                                    self.username.text! = report["username"] as! String
-//                                    self.kategori.text! = report["kategori"] as! String
-//                                    self.datetime.text! = report["datetime"] as! String
-//                                    self.address.text! = report["address"] as! String
-//                                    self.deskripsi.text! = report["deskripsi"] as! String
-                                }
-                            }
-                        }
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller self.navigationItem.rightBarButtonItem = self.editButtonItem
-        }
-        self.tableView.reloadData()
-        print("INI ALL REPORT : \(self.allReport)")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getdata()
     }
 
     // MARK: - Table view data source
@@ -73,6 +44,7 @@ class Report: UITableViewController {
             let id = self.allReport[indexPath.row].id
             print("INI ID : \(id)")
             self.reportManager.delete(id: id) // fungsi delete swipe bagian kanan
+            self.getdata()
         }
         let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
 
@@ -90,15 +62,8 @@ class Report: UITableViewController {
             print("INI DATA YANG DIEDIT : \(report.description)")
             let Storyboard = UIStoryboard(name: "Main", bundle: nil)
             let editView = Storyboard.instantiateViewController(identifier: "updateReportVC") as! UpdateReport
-            
-//            editView.id = report.id
-//            editView.category.text! = report.kategori
-//            editView.imgURL = report.img
-//            editView.address.text = report.address
-//            editView.desc.text = report.description
             editView.report = report
             self.navigationController?.showDetailViewController(editView, sender: (Any).self)
-//            self.performSegue(withIdentifier: "updateReportSegue", sender: (Any).self)
         }
         
         let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
@@ -118,6 +83,34 @@ class Report: UITableViewController {
 //    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func getdata(){
+        self.allReport.removeAll()
+        self.tableView.reloadData()
+        reportManager.getAll() { (json) in
+                                for rep in json {
+                                    print("INI REP : \(rep)")
+                                    for i in rep{
+                                        if(i.key == "data"){
+                                            print("INI I : \(i)")
+                                            print("INI I.VALUE : \(i.value)")
+                                            let report = i.value as! [[String : Any]]
+                                            var i = 0
+                                            for j in report {
+                                                //print("INI J : \(j)")
+                                                let data = ReportModel(json: j as! [String: Any])
+                                                self.allReport.append(data)
+                                                print("INI ALL REPORT 1 1 : \(self.allReport[i].description)")
+                                                i+=1
+                                            }
+                                            self.tableView.reloadData()
+                                            
+                                        }
+                                    }
+                                }
+            
+        }
     }
 
 }

@@ -76,6 +76,7 @@ class editProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBAction func btnConfirm(_ sender: Any) {
         let profile = UserProfile(id: self.id, name: self.fullname.text!, phone: self.phonenumber.text!, username: self.username.text!, email: self.email.text!, birthdate: self.birthdate.text!, gender: self.gender.text!)
         profileManager.update(user: profile)
+        self.dismiss(animated: true, completion: nil)
 //        let Storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        let profileView = Storyboard.instantiateViewController(identifier: "ProfileVC") as! Profile
 //

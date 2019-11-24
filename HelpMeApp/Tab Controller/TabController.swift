@@ -15,6 +15,7 @@ var locationManager = CLLocationManager()
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         // Do any additional setup after loading the view.
+        self.selectedIndex = 0
         locationManager.requestWhenInUseAuthorization()
         var currentLoc: CLLocation!
         if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
@@ -51,6 +52,9 @@ var locationManager = CLLocationManager()
             alert.addAction(UIAlertAction(title: "Tips", style: UIAlertAction.Style.default, handler: { (action) in
                 print("Tips Selected")
                 ///performSegue(withIdentifier: "CreateTips", sender: TabController())
+                let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let editView = Storyboard.instantiateViewController(identifier: "createTipsVC") as! CreateTips
+                self.navigationController?.pushViewController(editView, animated: true)
             }))
             self.present(alert, animated: true, completion: nil)
         }

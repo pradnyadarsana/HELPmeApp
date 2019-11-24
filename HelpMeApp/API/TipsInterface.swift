@@ -13,9 +13,10 @@ import Alamofire
 class TipsInterface {
     
     typealias APIResponse = ([[String: Any]])->Void
+    
     func create(tips:TipsModel)
     {
-        let tipsJSON = ["username": tips.usernameTips,"title": tips.titleTips, "description": tips.deskripsiTips, "img": tips.imgTips]
+        let tipsJSON = ["username": tips.usernameTips, "title": tips.titleTips, "description": tips.deskripsiTips, "img": tips.imgTips]
           
         let URL:String = "https://helpme.xbanana.id/api/tips";
         
@@ -60,7 +61,7 @@ class TipsInterface {
     
     func update(tips:TipsModel)
     {
-        let tipsJSON = ["id": tips.id,"username": tips.usernameTips,"title": tips.titleTips, "description": tips.deskripsiTips, "img": tips.imgTips]
+        let tipsJSON = ["id": tips.id, "title": tips.titleTips, "description": tips.deskripsiTips, "img": tips.imgTips]
           
         let URL:String = "https://helpme.xbanana.id/api/tips";
         
@@ -84,11 +85,11 @@ class TipsInterface {
     {
        let tipsJSON = ["id": id]
           
-        let URL:String = "https://helpme.xbanana.id/api/tips";
+        let URL:String = "https://helpme.xbanana.id/api/tips/delete";
         
         // 2 - create request
         Alamofire.request(URL,
-                          method: .delete,
+                          method: .post,
                           parameters: tipsJSON)
             .validate(statusCode: 200..<600)
             .responseJSON { response in

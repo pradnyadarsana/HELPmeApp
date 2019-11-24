@@ -33,28 +33,53 @@ class Profile: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+//        profileManager.getProfileByEmail(){ (json) in
+//
+//            //print(json)
+//            for usr in json {
+//                //print("INI USR : \(usr)")
+//                for i in usr{
+//                    if(i.key == "data"){
+////                        print("INI I : \(i)")
+////                        print("INI I.VALUE : \(i.value)")
+//                        let profile = i.value as! [String : Any]
+//                        //print(self.profile)
+//                        self.fullname.text! = profile["name"] as! String
+//                        self.username.text! = profile["username"] as! String
+//                        self.email.text! = profile["email"] as! String
+//                        self.phone.text! = profile["phone"] as! String
+//                        self.gender.text! = profile["gender"] as! String
+//                        self.birthday.text! = profile["birth"] as! String
+//                    }
+//                }
+//            }
+//        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         profileManager.getProfileByEmail(){ (json) in
-            
-            //print(json)
-            for usr in json {
-                //print("INI USR : \(usr)")
-                for i in usr{
-                    if(i.key == "data"){
-//                        print("INI I : \(i)")
-//                        print("INI I.VALUE : \(i.value)")
-                        let profile = i.value as! [String : Any]
-                        //print(self.profile)
-                        self.fullname.text! = profile["name"] as! String
-                        self.username.text! = profile["username"] as! String
-                        self.email.text! = profile["email"] as! String
-                        self.phone.text! = profile["phone"] as! String
-                        self.gender.text! = profile["gender"] as! String
-                        self.birthday.text! = profile["birth"] as! String
+                    
+                    //print(json)
+                    for usr in json {
+                        //print("INI USR : \(usr)")
+                        for i in usr{
+                            if(i.key == "data"){
+        //                        print("INI I : \(i)")
+        //                        print("INI I.VALUE : \(i.value)")
+                                let profile = i.value as! [String : Any]
+                                //print(self.profile)
+                                self.fullname.text! = profile["name"] as! String
+                                self.username.text! = profile["username"] as! String
+                                self.email.text! = profile["email"] as! String
+                                self.phone.text! = profile["phone"] as! String
+                                self.gender.text! = profile["gender"] as! String
+                                self.birthday.text! = profile["birth"] as! String
+                            }
+                        }
                     }
                 }
-            }
-        }
     }
+    
     @IBAction func btnEdit(_ sender: Any) {
         profileManager.getProfileByEmail(){ (json) in
             for usr in json {

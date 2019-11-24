@@ -25,7 +25,6 @@ class UpdateReport: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         picker.delegate = self
         picker.dataSource = self
         category.inputView = picker
@@ -38,7 +37,13 @@ class UpdateReport: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     }
     
     @IBAction func confirmBtn(_ sender: Any) {
+        let report = ReportModel(id: self.report.id, kategori: self.category.text!, img: self.imgURL, address: self.address.text!, description: self.desc.text, username: "", datetime: "")
+        self.reportManager.update(report: report)
+//        let repClass = Report()
+//        repClass.tableView.reloadData();
+        self.dismiss(animated: true, completion: nil)
     }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

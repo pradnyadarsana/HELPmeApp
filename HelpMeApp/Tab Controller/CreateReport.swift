@@ -36,7 +36,7 @@ class CreateReport: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         // Do any additional setup after loading the view.
         self.navigationController?.isNavigationBarHidden = false
         clearForm()
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         
         
         picker.delegate = self
@@ -65,7 +65,9 @@ class CreateReport: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
                                                          description: self.desc.text!,
                                                          username: self.profile["username"] as! String,
                                                          datetime: "")
-                                print(report)
+                                print(self.category)
+                                print(self.description)
+                                print(report.kategori)
                                 let reportManager = ReportInterface()
                                 reportManager.create(report: report)
                             }
@@ -73,6 +75,7 @@ class CreateReport: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
                     }
                 }
         clearForm()
+        navigationController?.popViewController(animated: true)
     }
     
     func clearForm(){
