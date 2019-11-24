@@ -15,14 +15,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     override func viewDidAppear(_ animated: Bool) { // Autologin masuk ke Home
         super.viewDidAppear(true)
+        //self.navigationController?.isNavigationBarHidden = true
+        
         if Auth.auth().currentUser != nil {
             self.performSegue(withIdentifier: "loginSegue", sender: (Any).self)
         }
+        
     }
     @IBAction func signInBtn(_ sender: Any) {
         signin(auth: Auth.auth())
@@ -73,30 +77,38 @@ class ViewController: UIViewController {
         
         /// the user is not registered
         /// user not found
-        
+        var message = ""
         let errorAuthStatus = AuthErrorCode.init(rawValue: error._code)!
         switch errorAuthStatus {
         case .wrongPassword:
             print("wrongPassword")
+            message = "Wrong Password"
         case .invalidEmail:
             print("invalidEmail")
-            let alert = UIAlertController(title: "Invalid Email", message: "Please enter correct Email Address", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            message = "Invalid Email"
         case .operationNotAllowed:
             print("operationNotAllowed")
+            message = "Operation not allowed"
         case .userDisabled:
             print("userDisabled")
+            message = "User Disabled"
         case .userNotFound:
             print("userNotFound")
-            let alert = UIAlertController(title: "User Not Found", message: "Please Enter Valid User", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            message = "User Not Found, Register now!"
         case .tooManyRequests:
             print("tooManyRequests, oooops")
+            message = "Too Many Request now, please try again later"
         default: fatalError("error not supported here")
         }
         
+        let alert = UIAlertController(title: "Login Failed", message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true) // ngilangin keyboard
     }
 }
 

@@ -19,11 +19,24 @@ class CreateTips: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = false
         clearForm()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        if self.isMovingFromParent {
+            let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+            var reportView = Storyboard.instantiateViewController(identifier: "tabController") as! TabController
+            reportView.selectedIndex = 1
+            self.navigationController?.pushViewController(reportView, animated: true)
+        }
+        
     }
     
     @IBAction func submitBtn(_ sender: Any) {

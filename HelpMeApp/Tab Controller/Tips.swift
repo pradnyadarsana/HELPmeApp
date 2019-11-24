@@ -119,7 +119,6 @@ class Tips: UITableViewController {
     
     func getdata(){
         self.allTips = []
-        self.tableView.reloadData()
         self.tipsManager.getAll() { (json) in
         for rep in json {
             print("INI REP : \(rep)")

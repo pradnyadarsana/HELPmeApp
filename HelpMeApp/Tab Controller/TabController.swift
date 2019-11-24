@@ -16,24 +16,24 @@ var locationManager = CLLocationManager()
         self.navigationController?.isNavigationBarHidden = true
         // Do any additional setup after loading the view.
         self.selectedIndex = 0
-        locationManager.requestWhenInUseAuthorization()
-        var currentLoc: CLLocation!
-        if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
-        CLLocationManager.authorizationStatus() == .authorizedAlways) {
-           currentLoc = locationManager.location
-            let lat = currentLoc.coordinate.latitude
-            let long = currentLoc.coordinate.longitude
-           print("LAT",lat)
-           print("LONG",long)
-            let address = CLGeocoder.init()
-            address.reverseGeocodeLocation(CLLocation.init(latitude: lat, longitude:long)) { (places, error) in
-                if error == nil{
-                    if let place = places{
-                        print("sakanti",places)
-                    }
-                }
-            }
-        }
+//        locationManager.requestWhenInUseAuthorization()
+//        var currentLoc: CLLocation!
+//        if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+//        CLLocationManager.authorizationStatus() == .authorizedAlways) {
+//           currentLoc = locationManager.location
+//            let lat = currentLoc.coordinate.latitude
+//            let long = currentLoc.coordinate.longitude
+//           print("LAT",lat)
+//           print("LONG",long)
+//            let address = CLGeocoder.init()
+//            address.reverseGeocodeLocation(CLLocation.init(latitude: lat, longitude:long)) { (places, error) in
+//                if error == nil{
+//                    if let place = places{
+//                        print("sakanti",places)
+//                    }
+//                }
+//            }
+//        }
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

@@ -25,7 +25,7 @@ class Register: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .date
         datePicker?.addTarget(self, action: #selector(Register.dateChanged(datePicker:)), for: .valueChanged)
@@ -35,7 +35,16 @@ class Register: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
         picker.delegate = self
         picker.dataSource = self
         gender.inputView = picker
-
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

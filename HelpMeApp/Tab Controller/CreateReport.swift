@@ -34,7 +34,7 @@ class CreateReport: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.navigationController?.isNavigationBarHidden = false
+        
         clearForm()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         
@@ -44,6 +44,20 @@ class CreateReport: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         category.inputView = picker
 
         view.addGestureRecognizer(tap)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        if self.isMovingFromParent {
+            let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+            var reportView = Storyboard.instantiateViewController(identifier: "tabController") as! TabController
+            reportView.selectedIndex = 0
+            self.navigationController?.pushViewController(reportView, animated: true)
+        }
+        
     }
     
     @IBAction func submitBtn(_ sender: Any) {
