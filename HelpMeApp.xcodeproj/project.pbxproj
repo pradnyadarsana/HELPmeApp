@@ -17,6 +17,7 @@
 		4A2B72C32381156200FB00DE /* ReportCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2B72C22381156200FB00DE /* ReportCustomCell.swift */; };
 		4A2B72C523811FB200FB00DE /* CreateReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2B72C423811FB200FB00DE /* CreateReport.swift */; };
 		4A2B72C72381355C00FB00DE /* UpdateReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2B72C62381355C00FB00DE /* UpdateReport.swift */; };
+		4A6E470F238A745C0081F748 /* UpdatePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E470E238A745C0081F748 /* UpdatePassword.swift */; };
 		4A6F7627236D96B800040495 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6F7626236D96B800040495 /* Register.swift */; };
 		4AC4B7EF236C9BA700993A99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4B7EE236C9BA700993A99 /* AppDelegate.swift */; };
 		4AC4B7F1236C9BA700993A99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4B7F0236C9BA700993A99 /* SceneDelegate.swift */; };
@@ -67,6 +68,7 @@
 		4A2B72C22381156200FB00DE /* ReportCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCustomCell.swift; sourceTree = "<group>"; };
 		4A2B72C423811FB200FB00DE /* CreateReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateReport.swift; path = "HelpMeApp/Tab Controller/CreateReport.swift"; sourceTree = SOURCE_ROOT; };
 		4A2B72C62381355C00FB00DE /* UpdateReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UpdateReport.swift; path = "HelpMeApp/Tab Controller/UpdateReport.swift"; sourceTree = SOURCE_ROOT; };
+		4A6E470E238A745C0081F748 /* UpdatePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePassword.swift; sourceTree = "<group>"; };
 		4A6F7626236D96B800040495 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		4AC4B7EB236C9BA700993A99 /* HelpMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AC4B7EE236C9BA700993A99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				4AC4B7F2236C9BA700993A99 /* ViewController.swift */,
 				4A6F7626236D96B800040495 /* Register.swift */,
 				EBFEC5662378A32D00B0C466 /* editProfile.swift */,
+				4A6E470E238A745C0081F748 /* UpdatePassword.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				4A01FB6123881D1500186BD0 /* CreateTips.swift in Sources */,
 				4A2B72C72381355C00FB00DE /* UpdateReport.swift in Sources */,
 				EB7F248D237FF66300BF362A /* Tips.swift in Sources */,
+				4A6E470F238A745C0081F748 /* UpdatePassword.swift in Sources */,
 				4ADEA8002380208600CB5507 /* UserProfile.swift in Sources */,
 				4ADEA7FE23801B9F00CB5507 /* ProfileInterface.swift in Sources */,
 			);

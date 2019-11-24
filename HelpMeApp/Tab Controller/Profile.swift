@@ -79,6 +79,23 @@ class Profile: UIViewController {
                     }
                 }
     }
+    @IBAction func btnChangePass(_ sender: Any) {
+        profileManager.getProfileByEmail(){ (json) in
+            for usr in json {
+                for i in usr{
+                    if(i.key == "data"){
+                        let profile = i.value as! [String : Any]
+                        let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let editView = Storyboard.instantiateViewController(identifier: "updatePassVC") as! UpdatePassword
+                        
+//                        editView.id = profile["id"] as! String
+//                        editView.profile = profile
+                        self.navigationController?.showDetailViewController(editView, sender: (Any).self)
+                    }
+                }
+            }
+        }
+    }
     
     @IBAction func btnEdit(_ sender: Any) {
         profileManager.getProfileByEmail(){ (json) in
