@@ -32,9 +32,9 @@ class TipsCustomCell: UITableViewCell {
     func setValue(_ value: TipsModel?, forKey key: String) {
         self.id = value!.id
         self.usernameTips.text = value?.usernameTips;
+        self.datetimeTips.text = value?.datetimeTips;
         self.titleTips.text = value?.titleTips;
         self.deskripsiTips.text = value?.deskripsiTips;
-        self.datetimeTips.text = value?.datetimeTips;
 
     }
 
