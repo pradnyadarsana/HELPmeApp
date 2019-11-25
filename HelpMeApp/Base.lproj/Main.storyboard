@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zPQ-tj-wPE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zPQ-tj-wPE">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -165,26 +165,19 @@
                                     <constraint firstAttribute="width" constant="300" id="OYp-jB-pHl"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBF-B6-V6D">
-                                <rect key="frame" x="143" y="504" width="129" height="39"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Register">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkm-2j-4pJ">
+                                <rect key="frame" x="179" y="522" width="57" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Register"/>
                                 <connections>
-                                    <action selector="registerBtn:" destination="DP6-UN-GX7" eventType="touchUpInside" id="Oib-5m-bfT"/>
+                                    <action selector="registerBtn:" destination="DP6-UN-GX7" eventType="touchUpInside" id="KUr-2F-JqW"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.85956436395645142" green="0.88438528776168823" blue="0.84388929605484009" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="OYW-Lt-DtB" firstAttribute="trailing" secondItem="SBF-B6-V6D" secondAttribute="trailing" constant="142" id="2QE-50-jlg"/>
                             <constraint firstItem="ER1-Qx-LjY" firstAttribute="leading" secondItem="OYW-Lt-DtB" secondAttribute="leading" constant="57" id="8Mq-Xq-gVW"/>
                             <constraint firstItem="ER1-Qx-LjY" firstAttribute="top" secondItem="OYW-Lt-DtB" secondAttribute="top" constant="70" id="ICh-nB-zpy"/>
-                            <constraint firstItem="OYW-Lt-DtB" firstAttribute="bottom" secondItem="SBF-B6-V6D" secondAttribute="bottom" constant="173" id="Ojb-fe-0XA"/>
-                            <constraint firstItem="SBF-B6-V6D" firstAttribute="leading" secondItem="OYW-Lt-DtB" secondAttribute="leading" constant="143" id="SHZ-jV-Uog"/>
-                            <constraint firstItem="SBF-B6-V6D" firstAttribute="top" secondItem="ER1-Qx-LjY" secondAttribute="bottom" constant="70" id="oQ0-eh-SMY"/>
                             <constraint firstItem="OYW-Lt-DtB" firstAttribute="trailing" secondItem="ER1-Qx-LjY" secondAttribute="trailing" constant="57" id="r2c-0z-yvr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OYW-Lt-DtB"/>
@@ -335,7 +328,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="camera.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mMq-la-eEL">
-                                <rect key="frame" x="327" y="216" width="30" height="22.666666666666671"/>
+                                <rect key="frame" x="327" y="216" width="30" height="23"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="ACT-dl-yLd"/>
@@ -555,7 +548,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="phone" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ekg-vc-ZuA">
-                                        <rect key="frame" x="48" y="107.33333333333333" width="30" height="43.666666666666657"/>
+                                        <rect key="frame" x="48" y="107.33333333333331" width="30" height="44"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="calendar.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cAV-6r-MbS">
                                         <rect key="frame" x="48" y="186" width="30" height="29.666666666666671"/>
@@ -564,7 +557,7 @@
                                         <rect key="frame" x="48" y="233.33333333333334" width="30" height="29.666666666666686"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="square.and.pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="s5O-sZ-T2q">
-                                        <rect key="frame" x="278" y="-3.0000000000000036" width="30" height="19.333333333333339"/>
+                                        <rect key="frame" x="278" y="-3.0000000000000036" width="30" height="19.333333333333336"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="pQ4-5Y-J1O"/>
                                         </constraints>
@@ -579,7 +572,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ellipses.bubble" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="InI-2r-fQR">
-                                        <rect key="frame" x="48" y="84.333333333333329" width="30" height="2.6666666666666714"/>
+                                        <rect key="frame" x="48" y="84.333333333333329" width="30" height="3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="OPT-9d-0Rj"/>
                                         </constraints>
@@ -923,12 +916,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SaH-Pd-cTC">
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SaH-Pd-cTC">
                                         <rect key="frame" x="0.0" y="151" width="237" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="237" id="07t-6H-S5H"/>
                                             <constraint firstAttribute="height" constant="34" id="vPV-dw-jOI"/>
                                         </constraints>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -942,12 +936,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQL-j9-OmY">
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQL-j9-OmY">
                                         <rect key="frame" x="0.0" y="214" width="238" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="238" id="Hku-nP-f7b"/>
                                             <constraint firstAttribute="height" constant="34" id="cab-PT-vgy"/>
                                         </constraints>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -1190,7 +1185,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="camera.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="GVs-hR-gOk">
-                                <rect key="frame" x="327" y="218" width="30" height="22.666666666666671"/>
+                                <rect key="frame" x="327" y="218" width="30" height="23"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="YxZ-bw-gM1"/>
@@ -1319,7 +1314,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="photo.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Dg6-Rn-Upp">
-                                <rect key="frame" x="333" y="444.66666666666669" width="30" height="21"/>
+                                <rect key="frame" x="333" y="444.66666666666669" width="30" height="21.333333333333314"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="BYC-14-fjA"/>
@@ -1407,21 +1402,21 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar.circle" catalog="system" width="64" height="60"/>
-        <image name="camera.circle" catalog="system" width="64" height="60"/>
-        <image name="camera.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="calendar.circle" catalog="system" width="64" height="62"/>
+        <image name="camera.circle" catalog="system" width="64" height="62"/>
+        <image name="camera.circle.fill" catalog="system" width="64" height="62"/>
         <image name="cm_photo_library_white" width="24" height="24"/>
         <image name="ellipses.bubble" catalog="system" width="64" height="54"/>
         <image name="house" catalog="system" width="64" height="54"/>
-        <image name="info.circle" catalog="system" width="64" height="60"/>
-        <image name="location" catalog="system" width="64" height="56"/>
+        <image name="info.circle" catalog="system" width="64" height="62"/>
+        <image name="location" catalog="system" width="64" height="60"/>
         <image name="logo-main" width="361" height="301"/>
         <image name="paperplane.fill" catalog="system" width="64" height="60"/>
-        <image name="person.2.square.stack" catalog="system" width="56" height="64"/>
-        <image name="person.crop.circle" catalog="system" width="64" height="60"/>
-        <image name="phone" catalog="system" width="64" height="56"/>
-        <image name="photo.fill" catalog="system" width="64" height="46"/>
-        <image name="plus.circle" catalog="system" width="64" height="60"/>
+        <image name="person.2.square.stack" catalog="system" width="54" height="64"/>
+        <image name="person.crop.circle" catalog="system" width="64" height="62"/>
+        <image name="phone" catalog="system" width="64" height="58"/>
+        <image name="photo.fill" catalog="system" width="64" height="48"/>
+        <image name="plus.circle" catalog="system" width="64" height="62"/>
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
         <image name="star" catalog="system" width="64" height="58"/>
     </resources>

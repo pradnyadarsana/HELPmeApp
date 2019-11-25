@@ -38,7 +38,7 @@ class CreateReport: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
                         print("thorough fare ",place.thoroughfare)
                         print("time zone ",place.timeZone)
                         
-                        var locationAddress = String(place.subThoroughfare ?? "sub thoroughfare") + ", " + String(place.thoroughfare ?? "thoroughfare") + ", " + String(place.subAdministrativeArea ?? "sub Administrative area") + ", " + String(place.country!)
+                        var locationAddress = String(place.subThoroughfare ?? "sub thoroughfare") + ", " + String(place.thoroughfare ?? "thoroughfare") + ", " + String(place.administrativeArea ?? "Administrative area") + ", " + String(place.country!)
                         self.address.text = locationAddress
                         
                     }

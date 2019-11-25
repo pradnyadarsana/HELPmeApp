@@ -19,8 +19,12 @@ class UpdateTips: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setForm()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(Register.viewTapped(gestureRecognizer:)))
+        view.addGestureRecognizer(tapGesture)
     }
-    
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
+        view.endEditing(true)
+    }
     @IBAction func btnConfirm(_ sender: Any) {
         self.tips.titleTips = self.txtTitle.text!
         self.tips.deskripsiTips = self.txtDesc.text
