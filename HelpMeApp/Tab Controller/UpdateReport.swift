@@ -7,9 +7,45 @@
 //
 
 import UIKit
-
+import MapKit
+import CoreLocation
 class UpdateReport: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
+    @IBAction func loc(_ sender: Any) {
+        locationManager.requestWhenInUseAuthorization()
+        var currentLoc: CLLocation!
+        if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+        CLLocationManager.authorizationStatus() == .authorizedAlways) {
+           currentLoc = locationManager.location
+            let lat = currentLoc.coordinate.latitude
+            let long = currentLoc.coordinate.longitude
+           print("LAT",lat)
+           print("LONG",long)
+            let address = CLGeocoder.init()
+            address.reverseGeocodeLocation(CLLocation.init(latitude: lat, longitude:long)) { (places, error) in
+                if error == nil{
+                    if let place = places?.first{
+                        print("GET ADDRESS")
+                        print("name ",place.name)
+                        print("administrative area ",place.administrativeArea)
+                        print("country ",place.country)
+                        print("locality ",place.locality)
+                        print("ocean ",place.ocean)
+                        print("postal code ",place.postalCode)
+                        print("sub administrative area ",place.subAdministrativeArea)
+                        print("sub locality ",place.subLocality)
+                        print("sub thorough fare ",place.subThoroughfare)
+                        print("thorough fare ",place.thoroughfare)
+                        print("time zone ",place.timeZone)
+                        
+                        var locationAddress = String(place.subThoroughfare ?? "sub thoroughfare") + ", " + String(place.thoroughfare ?? "thoroughfare") + ", " + String(place.subAdministrativeArea ?? "sub Administrative area") + ", " + String(place.country!)
+                        self.address.text = locationAddress
+                        
+                    }
+                }
+            }
+        }
+    }
     @IBOutlet var category: UITextField!
     @IBOutlet var img: UIImageView!
     @IBOutlet var address: UILabel!
@@ -21,7 +57,7 @@ class UpdateReport: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     var report = ReportModel(id: "", kategori: "", img: "", address: "", description: "", username: "", datetime: "");
     
     var reportManager = ReportInterface()
-    
+    var locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         

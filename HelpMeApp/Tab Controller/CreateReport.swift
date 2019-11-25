@@ -24,8 +24,22 @@ class CreateReport: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             let address = CLGeocoder.init()
             address.reverseGeocodeLocation(CLLocation.init(latitude: lat, longitude:long)) { (places, error) in
                 if error == nil{
-                    if let place = places{
-                        print("realaddress",places)
+                    if let place = places?.first{
+                        print("GET ADDRESS")
+                        print("name ",place.name)
+                        print("administrative area ",place.administrativeArea)
+                        print("country ",place.country)
+                        print("locality ",place.locality)
+                        print("ocean ",place.ocean)
+                        print("postal code ",place.postalCode)
+                        print("sub administrative area ",place.subAdministrativeArea)
+                        print("sub locality ",place.subLocality)
+                        print("sub thorough fare ",place.subThoroughfare)
+                        print("thorough fare ",place.thoroughfare)
+                        print("time zone ",place.timeZone)
+                        
+                        var locationAddress = String(place.subThoroughfare ?? "sub thoroughfare") + ", " + String(place.thoroughfare ?? "thoroughfare") + ", " + String(place.subAdministrativeArea ?? "sub Administrative area") + ", " + String(place.country!)
+                        self.address.text = locationAddress
                         
                     }
                 }
@@ -84,6 +98,7 @@ class CreateReport: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     }
     
     @IBAction func submitBtn(_ sender: Any) {
+        let address = self.address.text!
         let cat = self.category.text
         let desc = self.desc.text!
         let profileManager = ProfileInterface()
@@ -99,7 +114,7 @@ class CreateReport: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
                                 let report = ReportModel(id: "",
                                                          kategori: cat!,
                                                          img: "default image",
-                                                         address: self.address.text!,
+                                                         address: address,
                                                          description: desc,
                                                          username: self.profile["username"] as! String,
                                                          datetime: "")
