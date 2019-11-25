@@ -7,12 +7,34 @@
 //
 
 import UIKit
-
+import MapKit
+import CoreLocation
 class CreateReport: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
+    
+    @IBAction func pointLocation(_ sender: UIButton) {
+        locationManager.requestWhenInUseAuthorization()
+        var currentLoc: CLLocation!
+        if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+        CLLocationManager.authorizationStatus() == .authorizedAlways) {
+           currentLoc = locationManager.location
+            let lat = currentLoc.coordinate.latitude
+            let long = currentLoc.coordinate.longitude
+           print("LAT",lat)
+           print("LONG",long)
+            let address = CLGeocoder.init()
+            address.reverseGeocodeLocation(CLLocation.init(latitude: lat, longitude:long)) { (places, error) in
+                if error == nil{
+                    if let place = places{
+                        print("realaddress",places)
+                        
+                    }
+                }
+            }
+        }
+    }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return typeReport.count
     }
@@ -31,6 +53,7 @@ class CreateReport: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     var profile:[String: Any] = [:]
     var typeReport = ["Need Help!","Accident","Attention!"]
     var picker = UIPickerView()
+    var locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
