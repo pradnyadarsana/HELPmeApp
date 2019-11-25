@@ -6,10 +6,10 @@ target 'HelpMeApp' do
   use_frameworks!
 
   # Pods for HelpMeApp
-	pod 'Material', '~> 3.1.0'
 	pod 'Alamofire', '~> 4.8.1'
 	pod 'Firebase/Auth'
 	pod 'Firebase/Storage'
+	pod 'Hero'
 
   target 'HelpMeAppTests' do
     inherit! :search_paths
