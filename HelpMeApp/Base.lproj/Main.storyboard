@@ -15,12 +15,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4CX-8b-DxQ">
+                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4CX-8b-DxQ" customClass="SpringTextField" customModule="HelpMeApp" customModuleProvider="target">
                                 <rect key="frame" x="57" y="283" width="300" height="34"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="username"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="753" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kBw-Bq-pLE">
+                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="753" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kBw-Bq-pLE" customClass="SpringTextField" customModule="HelpMeApp" customModuleProvider="target">
                                 <rect key="frame" x="57" y="336.66666666666669" width="300" height="34"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
@@ -83,8 +83,8 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="F63-Ks-8Jm"/>
                     <connections>
-                        <outlet property="email" destination="4CX-8b-DxQ" id="lq8-Vw-2cZ"/>
-                        <outlet property="password" destination="kBw-Bq-pLE" id="VCO-A3-8jv"/>
+                        <outlet property="email" destination="4CX-8b-DxQ" id="CXF-BM-dYh"/>
+                        <outlet property="password" destination="kBw-Bq-pLE" id="KO7-Yg-oo8"/>
                         <segue destination="DP6-UN-GX7" kind="push" identifier="Register" id="Nwr-YF-iO8"/>
                         <segue destination="fS3-q2-Y25" kind="show" identifier="loginSegue" id="nf2-PJ-WSG"/>
                     </connections>
@@ -1421,6 +1421,7 @@
         <image name="star" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="nf2-PJ-WSG"/>
         <segue reference="NH0-p3-PBd"/>
     </inferredMetricsTieBreakers>
 </document>

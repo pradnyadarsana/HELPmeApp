@@ -10,8 +10,8 @@ import UIKit
 import FirebaseAuth
 
 class ViewController: UIViewController {
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var email: SpringTextField!
+    @IBOutlet weak var password: SpringTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,9 @@ class ViewController: UIViewController {
         
     }
     @IBAction func signInBtn(_ sender: Any) {
+        
         signin(auth: Auth.auth())
+        
     }
     
     @IBAction func btnRegister(_ sender: Any) {
@@ -98,9 +100,17 @@ class ViewController: UIViewController {
         case .tooManyRequests:
             print("tooManyRequests, oooops")
             message = "Too Many Request now, please try again later"
+        case .networkError:
+            print("Your Internet MISKIN")
+            message = "Your Internet is slow"
         default: fatalError("error not supported here")
         }
-        
+        email.animation = "shake"
+        email.duration = 1.0
+        email.animate()
+        password.animation = "shake"
+        password.duration = 1.0
+        password.animate()
         let alert = UIAlertController(title: "Login Failed", message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
